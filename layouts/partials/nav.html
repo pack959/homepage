@@ -1,0 +1,11 @@
+{{ "<!-- Header -->" | safeHTML }}
+<header id="header" class="skel-layers-fixed">
+    <h1><a href="{{ .Site.BaseURL }}"><img src="images/{{ .Site.Params.Navigation.logo }}" alt="" /></a></h1>
+    <nav id="nav">
+        <ul>
+            {{ range .Site.Params.Navigation.links }}
+                <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</header>

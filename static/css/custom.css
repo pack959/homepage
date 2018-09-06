@@ -1,0 +1,9 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto+Slab:500,300");
+
+body, input, select, textarea {
+    font-family: "Roboto Slab", Helvetica, sans-serif;
+}
+
+#banner {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/banner.jpg");
+}

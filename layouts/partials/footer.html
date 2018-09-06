@@ -1,0 +1,44 @@
+{{ "<!-- Footer -->" | safeHTML}}
+    <footer id="footer">
+        <div class="container">
+            <div class="row double">
+                <div class="6u">
+                    <div class="row collapse-at-2">
+                        <div class="6u">
+                            <h3>Accumsan</h3>
+                            <ul class="alt">
+                                <li><a href="#">Nascetur nunc varius</a></li>
+                                <li><a href="#">Vis faucibus sed tempor</a></li>
+                                <li><a href="#">Massa amet lobortis vel</a></li>
+                                <li><a href="#">Nascetur nunc varius</a></li>
+                            </ul>
+                        </div>
+                        <div class="6u">
+                            <h3>Faucibus</h3>
+                            <ul class="alt">
+                                <li><a href="#">Nascetur nunc varius</a></li>
+                                <li><a href="#">Vis faucibus sed tempor</a></li>
+                                <li><a href="#">Massa amet lobortis vel</a></li>
+                                <li><a href="#">Nascetur nunc varius</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="6u">
+                    <h2>Aliquam Interdum</h2>
+                    <p>Blandit nunc tempor lobortis nunc non. Mi accumsan. Justo aliquet massa adipiscing cubilia eu accumsan id. Arcu accumsan faucibus vis ultricies adipiscing ornare ut. Mi accumsan justo aliquet.</p>
+                    <ul class="icons">
+                        {{ range .Site.Params.Footer.social }}
+                            <li><a href="{{ .url | safeHTML }}" class="icon alt {{ .icon }}" target="_blank"><span class="label">{{ .label }}</span></a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+            <ul class="copyright">
+                <li>&copy; {{ .Site.Params.Footer.copyright }}</li>
+                {{ range .Site.Params.Footer.quicklinks}}
+                <li>{{ .text }} <a href="{{ .url | safeHTML }}">{{ .alt }}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+    </footer>

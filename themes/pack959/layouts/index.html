@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
+<!DOCTYPE HTML>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
+    {{ partial "header.html" . }}
+
+    <body class="landing">
+        {{ partial "nav" . }}
+        {{ partial "banner.html" . }}
+        {{ partial "home-content.html" . }}
+        {{ if .Site.Params.footer.enable }}
+            {{ partial "footer.html" . }}
+        {{ end }}   
+    </body>
+</html>
