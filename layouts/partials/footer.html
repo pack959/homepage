@@ -25,15 +25,14 @@
                     </div>
                 </div>
                 <div class="6u">
-                    <h2>Aliquam Interdum</h2>
-                    <p>Blandit nunc tempor lobortis nunc non. Mi accumsan. Justo aliquet massa adipiscing cubilia eu accumsan id. Arcu accumsan faucibus vis ultricies adipiscing ornare ut. Mi accumsan justo aliquet.</p>
-                    <ul class="icons">
-                        {{ range .Site.Params.Footer.social }}
-                            <li><a href="{{ .url | safeHTML }}" class="icon alt {{ .icon }}" target="_blank"><span class="label">{{ .label }}</span></a></li>
-                        {{ end }}
-                    </ul>
+                    <a href="#" class="image fit"><img src="images/Prepared-For-Life.png" alt="" /></a>
                 </div>
             </div>
+            <ul class="icons">
+                    {{ range .Site.Params.Footer.social }}
+                        <li><a href="{{ .url | safeHTML }}" class="icon alt {{ .icon }}" target="_blank"><span class="label">{{ .label }}</span></a></li>
+                    {{ end }}
+            </ul>        
             <ul class="copyright">
                 <li>&copy; {{ .Site.Params.Footer.copyright }}</li>
                 {{ range .Site.Params.Footer.quicklinks}}

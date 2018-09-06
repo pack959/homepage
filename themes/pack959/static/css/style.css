@@ -527,18 +527,18 @@
 			list-style: none;
 			padding-left: 0;
 		}
-
+		
 			ul.icons li {
 				display: inline-block;
-				padding: 0 1.25em 0 0;
+				padding: 0 1em 0 0;
 			}
-
+		
 				ul.icons li:last-child {
 					padding-right: 0;
 				}
-
+		
 				ul.icons li .icon:before {
-					font-size: 1.5em;
+					font-size: 2em;
 				}
 
 		ul.actions {

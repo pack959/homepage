@@ -1,6 +1,6 @@
 {{ "<!-- Header -->" | safeHTML }}
 <header id="header" class="skel-layers-fixed">
-    <h1><a href="{{ .Site.BaseURL }}"><img src="{{ "images/logo.png" | absURL }}" alt="" /></a></h1>
+    <h1><a href="{{ .Site.BaseURL }}" class="image fit"><img src="{{ "images/logo.png" | absURL }}" alt="" /></a></h1>
     <nav id="nav">
         <ul>
             {{ range .Site.Params.Navigation.links }}
