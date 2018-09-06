@@ -41,33 +41,14 @@ disqusShortname = ""
     title = "Cub Scout Pack 959"
     subtitle = ""
     menu = "Menu"
-    # Optional logo as brand stored in img/
-    logo = "logo.png"
 
     [[params.navigation.links]]
       name = "Home"
       url = "#"
 
     [[params.navigation.links]]
-      name = "Blogs"
-      url = "blogs"
-
-    [[params.navigation.links]]
-      name = "Elements"
-      url = "elements.html"
-
-  # Section Type Two
-  [params.two]
-    enable = true
-    title = "Massa libero"
-    subtitle = """Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. 
-    Mauris aliquet magna magna sed nunc rhoncus pharetra. 
-    Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. 
-    Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero.
-    Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus."""
-    buttonText = "Get Started"
-    url = "blogs"
-
+      name = "Contact"
+      url = "contact"
 
   # Contact section
   [params.contact]
