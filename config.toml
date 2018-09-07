@@ -51,11 +51,7 @@ googleAnalytics = ""
       name = "Volunteer"
       url = "volunteer"
 
-    [[params.navigation.links]]
-      name = "Join"
-      url = "join"
-
-  # Footer section
+ # Footer section
   [params.footer]
     enable = true
     copyright = "Cub Scout Pack 959"

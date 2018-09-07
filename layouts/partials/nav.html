@@ -6,6 +6,7 @@
             {{ range .Site.Params.Navigation.links }}
                 <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>
             {{ end }}
+            <li><a href="/join" class="button special">Join</a></li>
         </ul>
     </nav>
 </header>
