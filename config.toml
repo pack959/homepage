@@ -1,7 +1,6 @@
 baseURL = "https://heuristic-lewin-ba4539.netlify.com/"
 languageCode = "en-us"
 title = "Pack 959"
-theme = "pack959"
 
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
