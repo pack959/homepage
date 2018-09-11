@@ -5,24 +5,52 @@ title = "Pack 959"
 googleAnalytics = ""
 
 [params]
-  # Just a custom image variable, please define it in .md files for content.
-  image = ""
 
   # Navigation Section
   [params.navigation]
-    title = "Cub Scout Pack 959"
-
     [[params.navigation.links]]
       name = "Home"
       url = "#"
-
     [[params.navigation.links]]
       name = "Contact"
       url = "contact"
-
     [[params.navigation.links]]
       name = "Volunteer"
       url = "volunteer"
+
+  # Home
+  [params.home]
+
+    ## Why Cub Scouts?
+    [params.home.why]
+      title = "Why Cub Scouts?"
+      
+      [[params.home.why.box]]
+        title = "Building Character"
+        text = "Cub Scouts build character through a collection of core values by an individual that leads to moral commitment and action.  A Scout is Trustworthy, Loyal, Helpful, Friendly, Courteous, Kind, Obedient, Cheerful, Thrifty, Brave, Clean and Reverent."
+      [[params.home.why.box]]
+        title = "Learn Citizenship"
+        text = "Cub Scouts learn citizenship means contributing service and showing responsibility to local, state, and national communities.  By helping fellow citizens in our local community, we remember the Law of the Pack and what it means when we say \"gives goodwill.\""
+      [[params.home.why.box]]
+        title = "Mental and Physical Fitness"
+        text = "Cub Scouts learn to become personally committed to keeping their minds and bodies clean and fit.  A Scout know they needs to be strong and healthy in mind and body to be able to contribute to our family, community, and nation."
+
+    # Resources
+    [[params.home.resources]]
+      url = "https://cubscouts.org/5-things-know-starting-cub-scouts/"
+      text = "5 Things To Know Before Starting Cub Scouts"
+    [[params.home.resources]]
+      url = "http://scoutingwire.org/lion/"
+      text = "The Lion program"
+    [[params.home.resources]]
+      url = "http://www.bsauniforms.org/"
+      text = "Guide to uniforms"
+    [[params.home.resources]]
+      url = "https://filestore.scouting.org/filestore/pdf/CubScout_Insignia.pdf"
+      text = "Insignia"
+    [[params.home.resources]]
+      url = "https://www.scoutbook.com/"
+      text = "ScoutBook"
 
  # Footer section
   [params.footer]
@@ -30,10 +58,9 @@ googleAnalytics = ""
 
     [[params.footer.social]]
       icon = "fa-facebook"
-      url= "https://www.facebook.com/familyscouting959"
+      url = "https://www.facebook.com/familyscouting959"
       label = "Facebook"
-
     [[params.footer.social]]
       icon = "fa-instagram"
-      url= "https://www.instagram.com/pack959"
+      url = "https://www.instagram.com/pack959"
       label = "Instagram"

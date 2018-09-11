@@ -1,27 +1,17 @@
 <section id="one" class="wrapper style1">
     <header class="major">
-        <h2>Why Cub Scouts?</h2>
+        <h2>{{ .Site.Params.Home.Why.title }}</h2>
     </header>
     <div class="container">
         <div class="row">
-            <div class="4u">
-                <section class="special box">
-                    <h3>Building Character</h3>
-                    <p>Cub Scouts build character through a collection of core values by an individual that leads to moral commitment and action.  A Scout is Trustworthy, Loyal, Helpful, Friendly, Courteous, Kind, Obedient, Cheerful, Thrifty, Brave, Clean and Reverent.</p>
-                </section>
-            </div>
-            <div class="4u">
-                <section class="special box">
-                    <h3>Learn Citizenship</h3>
-                    <p>Cub Scouts learn citizenship means contributing service and showing responsibility to local, state, and national communities.  By helping fellow citizens in our local community, we remember the Law of the Pack and what it means when we say “gives goodwill."</p>
-                </section>
-            </div>
-            <div class="4u">
-                <section class="special box">
-                    <h3>Mental and Physical Fitness</h3>
-                    <p>Cub Scouts learn to become personally committed to keeping their minds and bodies clean and fit.  A Scout know they needs to be strong and healthy in mind and body to be able to contribute to our family, community, and nation.</p>
-                </section>
-            </div>
+            {{ range .Site.Params.Home.Why.Box }}
+                <div class="4u">
+                    <section class="special box">
+                        <h3>{{ .title }}</h3>
+                        <p>{{ .text }}</p>
+                    </section>
+                </div>
+            {{ end }}
         </div>
     </div>
 </section>

@@ -1,9 +1,8 @@
 <section>
     <h3>Resources</h3>
     <ul class="alt">
-        <li><a href="https://cubscouts.org/5-things-know-starting-cub-scouts/">5 Things To Know Before Starting Cub Scouts</a></li>
-        <li><a href="http://scoutingwire.org/lion/">The Lion program</a></li>
-        <li><a href="http://www.bsauniforms.org/">Guide to uniforms</a> and <a href="https://filestore.scouting.org/filestore/pdf/CubScout_Insignia.pdf">details for insignia</a></li>
-        <li><a href="https://www.scoutbook.com/">Scoutbook</a></li>
+        {{ range .Site.Params.Home.resources }}
+            <li><a href="{{ .url | safeHTML }}">{{ .text }}</a></li>
+        {{ end }}
     </ul>
 </section>
