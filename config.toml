@@ -1,26 +1,16 @@
 baseURL = "https://heuristic-lewin-ba4539.netlify.com/"
-languageCode = "en-us"
 title = "Pack 959"
 
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 
 [params]
-  # Link custom assets relative to /static
-  custom_css = [
-    "css/custom.css"
-  ]
-  custom_js  = []
-  favicon    = "favicon.ico"
-
   # Just a custom image variable, please define it in .md files for content.
   image = ""
 
   # Navigation Section
   [params.navigation]
     title = "Cub Scout Pack 959"
-    subtitle = ""
-    menu = "Menu"
 
     [[params.navigation.links]]
       name = "Home"

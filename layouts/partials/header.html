@@ -20,10 +20,8 @@
         <meta name="description" content="{{ .Summary }}">
     {{ end }}
 
-    {{ if .Site.Params.favicon }}
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | absURL }}">
-        <meta name="theme-color" content="#FFF">
-    {{ end }}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon.ico" | absURL }}">
+    <meta name="theme-color" content="#FFF">
     
     <link rel="canonical" href="{{ .Permalink }}">
     
