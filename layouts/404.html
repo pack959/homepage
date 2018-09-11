@@ -8,16 +8,14 @@
         
         <section id="main" class="wrapper style1">
             <header class="major">
-                <h2>{{ .Site.Params.Error404.heading }}</h2>
+                <h2>Page not found</h2>
             </header>
 
             <div class="container">
-                {{ .Site.Params.Error404.text | markdownify }}
+                {{ "Please visit [this page](/)" | markdownify }}
             </div>
         </section>
 
-            {{ if .Site.Params.footer.enable }}
-            {{ partial "footer.html" . }}
-        {{ end }}   
+        {{ partial "footer.html" . }}
     </body>
 </html>

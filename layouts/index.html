@@ -7,8 +7,6 @@
         {{ partial "nav" . }}
         {{ partial "banner.html" . }}
         {{ partial "home-content.html" . }}
-        {{ if .Site.Params.footer.enable }}
-            {{ partial "footer.html" . }}
-        {{ end }}   
+        {{ partial "footer.html" . }}
     </body>
 </html>

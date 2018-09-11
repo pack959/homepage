@@ -13,9 +13,7 @@
 
             {{ block "main" . }}{{ end }}
             
-            {{ if .Site.Params.footer.enable }}
-                {{ partial "footer.html" . }}
-            {{ end }}
+            {{ partial "footer.html" . }}
         </section>
     </body>
 </html>

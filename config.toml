@@ -6,17 +6,6 @@ title = "Pack 959"
 googleAnalytics = ""
 
 [params]
-  # You can use Markdown syntax for urls [text](//url.to/source)
-  # To create multi-line text in strings use the """example Text""" format
-  #
-  # All icons using Fontawesome's icon font. Look at fontawesome.io/icons
-  # for more icons. The icons are represented by their corresponding
-  # CSS class.
-
-  # Provide your metadata here.
-  name = "Your name"
-  description = "Your description"
-
   # Link custom assets relative to /static
   custom_css = [
     "css/custom.css"
@@ -26,11 +15,6 @@ googleAnalytics = ""
 
   # Just a custom image variable, please define it in .md files for content.
   image = ""
-
-  # 404 error customization
-  [params.error404]
-    heading = "Page not found"
-    text = "Please visit [this page](/)"
 
   # Navigation Section
   [params.navigation]
@@ -52,7 +36,6 @@ googleAnalytics = ""
 
  # Footer section
   [params.footer]
-    enable = true
     copyright = "Cub Scout Pack 959"
 
     [[params.footer.social]]
