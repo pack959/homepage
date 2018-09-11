@@ -24,9 +24,8 @@ googleAnalytics = ""
     ## Why Cub Scouts?
     [params.home.why]
       title = "Why Cub Scouts?"
-      
       [[params.home.why.box]]
-        title = "Building Character"
+        title = "Build Character"
         text = "Cub Scouts build character through a collection of core values by an individual that leads to moral commitment and action.  A Scout is Trustworthy, Loyal, Helpful, Friendly, Courteous, Kind, Obedient, Cheerful, Thrifty, Brave, Clean and Reverent."
       [[params.home.why.box]]
         title = "Learn Citizenship"
