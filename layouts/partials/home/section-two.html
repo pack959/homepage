@@ -8,11 +8,11 @@
             {{ range .Site.Params.Home.Activities.Item }}
                 <div class="6u">
                     <section class="special">
-                        <span class="image fit"></a><img src="{{ .image | absURL }}" alt="" /></span>
+                        <span class="image fit"></a><img src="{{ .image | relURL }}" alt="" /></span>
                         <h3>{{ .title }}</h3>
                         <p>{{ .text }}</p>
                         <ul class="actions">
-                            <li><a href="{{ .url | absURL }}" class="button alt">Learn More</a></li>
+                            <li><a href="{{ .url | relURL }}" class="button alt">Learn More</a></li>
                         </ul>
                     </section>
                 </div>

@@ -1,11 +1,11 @@
 {{ "<!-- Banner -->" | safeHTML}}
     <section id="banner">
-        <h1><img src="{{ "images/CubScout.png" | absURL }}" alt="" /></h1>
+        <h1><img src="{{ "images/CubScout.png" | relURL }}" alt="" /></h1>
         <div class="inner">
             <h2>Pack 959</h2>
             <p>Grace Lutheran Church, Hockessin, Delaware</p>
             <ul class="actions">
-                <li><a href="{{ .Site.Params.join_url | absURL }}" class="button big special">Join</a></li>
+                <li><a href="{{ .Site.Params.join_url | relURL }}" class="button big special">Join</a></li>
             </ul>
         </div>
     </section>

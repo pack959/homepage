@@ -1,6 +1,5 @@
 <head>
     <title>
-        {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
         {{ if .IsHome }}
             {{ .Site.Title }}
         {{ else if .Params.heading }}
@@ -20,19 +19,19 @@
         <meta name="description" content="{{ .Summary }}">
     {{ end }}
 
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon.ico" | absURL }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon.ico" | relURL }}">
     <meta name="theme-color" content="#FFF">
     
-    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ .RelPermalink }}">
     
-    <script src="{{ "js/jquery.min.js" | absURL }}"></script>
-    <script src="{{ "js/skel.min.js" | absURL }}"></script>
-    <script src="{{ "js/skel-layers.min.js" | absURL }}"></script>
-    <script src="{{ "js/init.js" | absURL }}"></script>
+    <script src="{{ "js/jquery.min.js" | relURL }}"></script>
+    <script src="{{ "js/skel.min.js" | relURL }}"></script>
+    <script src="{{ "js/skel-layers.min.js" | relURL }}"></script>
+    <script src="{{ "js/init.js" | relURL }}"></script>
     <noscript>
-        <link rel="stylesheet" href="{{ "css/skel.css" | absURL }}" />
-        <link rel="stylesheet" href="{{ "css/style.css" | absURL }}" />
-        <link rel="stylesheet" href="{{ "css/style-xlarge.css" | absURL }}" />
+        <link rel="stylesheet" href="{{ "css/skel.css" | relURL }}" />
+        <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+        <link rel="stylesheet" href="{{ "css/style-xlarge.css" | relURL }}" />
     </noscript>
     
     {{ if .Site.GoogleAnalytics }}
