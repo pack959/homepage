@@ -5,18 +5,19 @@ title = "Pack 959"
 googleAnalytics = ""
 
 [params]
+  join_url = "join/"
 
   # Navigation Section
   [params.navigation]
     [[params.navigation.links]]
       name = "Home"
-      url = "#"
+      url = "/"
     [[params.navigation.links]]
       name = "Contact"
-      url = "contact"
+      url = "contact/"
     [[params.navigation.links]]
       name = "Volunteer"
-      url = "volunteer"
+      url = "volunteer/"
 
   # Home
   [params.home]
@@ -34,6 +35,7 @@ googleAnalytics = ""
         title = "Mental and Physical Fitness"
         text = "Cub Scouts learn to become personally committed to keeping their minds and bodies clean and fit.  A Scout know they needs to be strong and healthy in mind and body to be able to contribute to our family, community, and nation."
 
+    ## Activities
     [params.home.activities]
       title = "Activities"
       subtitle = ""
@@ -58,7 +60,7 @@ googleAnalytics = ""
         text = "Eget mi ac magna cep lobortis faucibus accumsan enim lacinia adipiscing metus urna adipiscing cep commodo id. Ac quis arcu amet. Arcu nascetur lorem adipiscing non faucibus odio nullam arcu lobortis. Aliquet ante feugiat. Turpis aliquet ac posuere volutpat lorem arcu aliquam lorem."
         url = "#"
 
-    # Resources
+    ## Resources
     [[params.home.resources]]
       text = "5 Things To Know Before Starting Cub Scouts"
       url = "https://cubscouts.org/5-things-know-starting-cub-scouts/"

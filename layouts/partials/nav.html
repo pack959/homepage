@@ -1,4 +1,3 @@
-{{ "<!-- Header -->" | safeHTML }}
 <header id="header" class="skel-layers-fixed">
     <logo id="logo"><a href="{{ .Site.BaseURL }}"><img src="{{ "images/logo.png" | absURL }}" alt="" /></a></logo>
     <nav id="nav">
@@ -6,7 +5,7 @@
             {{ range .Site.Params.Navigation.links }}
                 <li><a href="{{ .url | absURL }}">{{ .name }}</a></li>
             {{ end }}
-            <li><a href="/join" class="button special">Join</a></li>
+            <li><a href="{{ .Site.Params.join_url | absURL }}" class="button special">Join</a></li>
         </ul>
     </nav>
 </header>
