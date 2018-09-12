@@ -5,6 +5,7 @@
 /* Basic */
 
 	body {
+		display: none;
 		background: #fff;
 	}
 

@@ -108,9 +108,9 @@
 	});
 
 	$(function() {
-		
-		// jQuery ready stuff.
-		
+		$(window).load(function() {
+			$("body").fadeIn(100);
+		});
 	});
 
 })(jQuery);
