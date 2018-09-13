@@ -14,16 +14,16 @@ collections:
         name: "home"
         fields:
           - {label: Why, name: why, widget: object, fields: [
-              {label: Heading, name: heading, widget: string}
+              {label: Heading, name: heading, widget: string},
               {label: Items, name: items, widget: list, fields: [ 
-                {label: Title, name: title, widget: string}
+                {label: Title, name: title, widget: string},
                 {label: Text, name: text, widget: text}]}]}
           - {label: Activities, name: activities, widget: object, fields: [
-              {label: Heading, name: heading, widget: string}
+              {label: Heading, name: heading, widget: string},
               {label: Items, name: items, widget: list, fields: [ 
-                {label: Title, name: title, widget: string}
-                {label: Image, name: image, widget: image}
-                {label: Text, name: text, widget: text}
+                {label: Title, name: title, widget: string},
+                {label: Image, name: image, widget: image},
+                {label: Text, name: text, widget: text},
                 {label: Url, name: url, widget: string}]}]}
 
       - file: "content/join.md"
