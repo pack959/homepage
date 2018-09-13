@@ -6,24 +6,27 @@ media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "home"
-    label: "Home"
-    file: "content/_index.md"
-    fields:
-      - label: "Why"
-        name: why
-        widget: object
-        fields: 
-          - {label: Heading, name: heading, widget: string}
-          - label: Items
-            name: items
-            widget: list
+  - name: "Pages"
+    label: "pages"
+    files:
+      - file: "content/_index.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - label: "Why"
+            name: why
+            widget: object
             fields: 
-              - {label: Title, name: title, widget: string}
-              - {label: Text, name: text, widget: text}
+              - {label: Heading, name: heading, widget: string}
+              - label: Items
+                name: items
+                widget: list
+                fields: 
+                  - {label: Title, name: title, widget: string}
+                  - {label: Text, name: text, widget: text}
 
-  - name: "pages"
-    label: "Pages"
+  - name: "otherpages"
+    label: "Oather Pages"
     folder: "content"
     fields:
       - {label: "Title", name: "title", widget: "string"}
