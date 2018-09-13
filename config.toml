@@ -12,6 +12,9 @@ googleAnalytics = ""
       name = "Home"
       url = "/"
     [[params.navigation.links]]
+      name = "Calendar"
+      url = "calendar/"
+    [[params.navigation.links]]
       name = "Contact"
       url = "contact/"
     [[params.navigation.links]]
