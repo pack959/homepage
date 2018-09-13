@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "static/images"
+public_folder: "/images"
 
 collections:
   - name: "Pages"
@@ -13,21 +13,27 @@ collections:
         label: "Home Page"
         name: "home"
         fields:
-          - label: "Why"
-            name: why
-            widget: object
-            fields: 
-              - {label: Heading, name: heading, widget: string}
-              - label: Items
-                name: items
-                widget: list
-                fields: 
-                  - {label: Title, name: title, widget: string}
-                  - {label: Text, name: text, widget: text}
+          - {label: Why, name: why, widget: object, fields: [
+              {label: Heading, name: heading, widget: string}
+              {label: Items, name: items, widget: list, fields: [ 
+                {label: Title, name: title, widget: string}
+                {label: Text, name: text, widget: text}
+          - {label: Activities, name: activities, widget: object, fields: [
+              {label: Heading, name: heading, widget: string}
+              {label: Items, name: items, widget: list, fields: [ 
+                {label: Title, name: title, widget: string}
+                {label: Image, name: image, widget: image}
+                {label: Text, name: text, widget: text}
+                {label: Url, name: url, widget: string}]}]}
 
-  - name: "otherpages"
-    label: "Oather Pages"
-    folder: "content"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/join.md"
+        label: "Join"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+
+      - file: "content/volunteer.md"
+        label: "Volunteer"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
