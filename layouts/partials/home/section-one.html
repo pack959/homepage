@@ -1,10 +1,10 @@
 <section id="one" class="wrapper style1">
     <header class="major">
-        <h2>{{ .Site.Params.Home.Why.title }}</h2>
+        <h2>{{ .Params.Why.title }}</h2>
     </header>
     <div class="container">
         <div class="row">
-            {{ range .Site.Params.Home.Why.Box }}
+            {{ range .Params.Why.Items }}
                 <div class="4u">
                     <section class="special box">
                         <h3>{{ .title }}</h3>

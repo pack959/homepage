@@ -1,7 +1,7 @@
 <section>
     <h3>Resources</h3>
     <ul class="alt">
-        {{ range .Site.Params.Home.resources }}
+        {{ range .Params.resources }}
             <li><a href="{{ .url | safeHTML }}">{{ .text }}</a></li>
         {{ end }}
     </ul>

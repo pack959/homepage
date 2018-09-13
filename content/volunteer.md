@@ -1,6 +1,6 @@
-+++
-title = "Volunteer"
-+++
+---
+title: "Volunteer"
+---
 
 ## Ready to volunteer?
 

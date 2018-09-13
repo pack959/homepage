@@ -1,11 +1,11 @@
 <section id="two" class="wrapper style2">
     <header class="major">
-        <h2>{{ .Site.Params.Home.Activities.title }}</h2>
-        <p>{{ .Site.Params.Home.Activities.subtitle }}</p>
+        <h2>{{ .Params.Activities.title }}</h2>
+        <p>{{ .Params.Activities.subtitle }}</p>
     </header>
     <div class="container">
         <div class="row">
-            {{ range .Site.Params.Home.Activities.Item }}
+            {{ range .Params.Activities.Items }}
                 <div class="6u">
                     <section class="special">
                         <span class="image fit"></a><img src="{{ .image | relURL }}" alt="" /></span>
