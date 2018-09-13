@@ -28,12 +28,14 @@ collections:
 
       - file: "content/join.md"
         label: "Join"
+        name: "join"
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
 
       - file: "content/volunteer.md"
         label: "Volunteer"
+        name: "volunteer"
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
