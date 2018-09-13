@@ -26,6 +26,9 @@ collections:
                 {label: Image, name: image, widget: image},
                 {label: Text, name: text, widget: text},
                 {label: Url, name: url, widget: string}]}]}
+          - {label: Resources, name: resources, widget: list, fields: [ 
+              {label: Text, name: text, widget: string},
+              {label: Url, name: url, widget: string}]}
 
       - file: "content/join.md"
         label: "Join"
