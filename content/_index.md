@@ -39,13 +39,11 @@ activities:
 
 resources:
   - text: 5 Things To Know Before Starting Cub Scouts
-    url: https://cubscouts.org/5-things-know-starting-cub-scouts/
-  - text: The Lion program
-    url: http://scoutingwire.org/lion/
-  - text: Guide to uniforms
-    url: http://www.bsauniforms.org/
+    url: https://www.scouting.org/cubhub/5-things-know-starting-cub-scouts/
+  - text: The Advancement Trail
+    url: https://www.scouting.org/programs/cub-scouts/what-cub-scouts-earn/the-advancement-trail/
   - text: Insignia
-    url: https://filestore.scouting.org/filestore/pdf/CubScout_Insignia.pdf
+    url: https://filestore.scouting.org/filestore/pdf/33066/33066_Cub_Scout_Insignia_WEB.pdf
   - text: ScoutBook
     url: https://www.scoutbook.com/
 ---
