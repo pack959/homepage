@@ -4,7 +4,7 @@ command = "hugo --minify"
 
 [build.environment]
 HUGO_VERSION = "0.57.2"
-#HUGO_ENABLEGITINFO = "true"
+GO_VERSION = "1.12"
 
 [context.production.environment]
 HUGO_ENV = "production"
