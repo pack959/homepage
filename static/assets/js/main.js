@@ -1,10 +1,3 @@
-/*
-	Slate by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-*/
-
-
 (function($) {
 
 	var	$window = $(window),
@@ -102,7 +95,7 @@
 	};
 
 	/**
-	 * Custom banner slider for Slate.
+	 * Custom banner slider.
 	 * @return {jQuery} jQuery object.
 	 */
 	$.fn._slider = function(options) {
