@@ -1,8 +1,0 @@
-<section>
-    <h3>Resources</h3>
-    <ul class="alt">
-        {{ range .Params.resources }}
-            <li><a href="{{ .url | safeHTML }}">{{ .text }}</a></li>
-        {{ end }}
-    </ul>
-</section>

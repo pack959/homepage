@@ -1,19 +1,45 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-    
-    {{ partial "header.html" . }}
+<!doctype html>
+<!--
+    Slate by Pixelarity
+    pixelarity.com | hello@pixelarity.com
+    License: pixelarity.com/license
+-->
+<html>
+    <head>
+        <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-    <body id="top">
-        {{ partial "nav" . }}
-
-        <section id="main" class="wrapper style1">
-            <header class="major">
-                <h2>{{ .Title }}</h2>
-            </header>
-
-            {{ block "main" . }}{{ end }}
-            
-            {{ partial "footer.html" . }}
-        </section>
+        <!-- CSS -->
+        {{- $inServerMode	:= .Site.IsServer }}
+        {{- $cssTarget		:= "assets/css/main.css" }}
+        {{- $cssOptions		:= cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}		
+        {{- $style			:= resources.Get "sass/main.scss" | resources.ExecuteAsTemplate $cssTarget . | toCSS $cssOptions }}
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+        <noscript>
+            {{- $cssTarget		:= "assets/css/noscript.css" }}
+            {{- $cssOptions		:= cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}		
+            {{- $style			:= resources.Get "sass/noscript.scss" | resources.ExecuteAsTemplate $cssTarget . | toCSS $cssOptions }}
+            <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+        </noscript>
+        
+        {{ if .Site.GoogleAnalytics }}
+        {{ template "_internal/google_analytics.html" . }}
+        {{ end }}
+    </head>
+    <body class="is-preload">
+        {{ partial "header.html" . }}
+                
+        {{ block "content" . }}{{ end }}
+        
+        {{ partial "footer.html" . }}
+        <!-- Scripts -->
+        <script src="{{ "assets/js/jquery.min.js" | relURL }}"></script>
+        <script src="{{ "assets/js/jquery.dropotron.min.js" | relURL }}"></script>
+        <script src="{{ "assets/js/jquery.scrollex.min.js" | relURL }}"></script>
+        <script src="{{ "assets/js/browser.min.js" | relURL }}"></script>
+        <script src="{{ "assets/js/breakpoints.min.js" | relURL }}"></script>
+        <script src="{{ "assets/js/util.js" | relURL }}"></script>
+        <script src="{{ "assets/js/main.js" | relURL }}"></script>
     </body>
 </html>

@@ -1,36 +1,11 @@
-{{ "<!-- Footer -->" | safeHTML}}
-    <footer id="footer">
-        <div class="container">
-            <div class="row double">
-                <div class="6u">
-                    <div class="row collapse-at-2">
-                        <div class="12u">
-                            <h3>Our Supporting Organizations</h3>
-                            <ul class="alt">
-                                <li><a href="https://www.scouting.org/programs/cub-scouts/">Cub Scouts</a></li>
-                                <li><a href="https://www.delmarvacouncil.org/">Del-Mar-Va Council</a></li>
-                                <li><a href="https://www.delmarvacouncil.org/1521">Powder Mill District</a></li>
-                                <li><a href="https://www.glcde.org/">Grace Lutheran Church</a></li>
-                            </ul>
-                        </div>
-                        <div class="6u">
-                        </div>
-                    </div>
-                </div>
-                <div class="6u">
-                    <a href="#" class="image fit"><img src="{{"images/Prepared-For-Life.png" | relURL }}" alt="" /></a>
-                </div>
-            </div>
-            <ul class="icons">
-                    {{ range .Site.Params.Footer.social }}
-                        <li><a href="{{ .url | safeHTML }}" class="icon alt {{ .icon }}" target="_blank"><span class="label">{{ .label }}</span></a></li>
-                    {{ end }}
-            </ul>        
-            <ul class="copyright">
-                <li>&copy; {{ .Site.Params.Footer.copyright }}</li>
-                {{ range .Site.Params.Footer.quicklinks}}
-                <li>{{ .text }} <a href="{{ .url | safeHTML }}">{{ .alt }}</a></li>
-                {{ end }}
-            </ul>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <p class="copyright">{{ .Site.Data.footer.copyright | safeHTML }}</p>
+        <ul class="menu">
+            {{ range $link := .Site.Data.footer.links }}
+            <li><a href="{{ $link.url }}" {{ if $link.new_window }}target="_blank" rel="noopener"{{ end }}>{{ $link.text }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+</footer>

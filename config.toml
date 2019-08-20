@@ -1,36 +1,4 @@
-baseurl = "/"
 title = "Pack 959"
-
-# Enter your tracking code to enable Google Analytics
 googleAnalytics = "UA-145912342-1"
 
-[params]
-  join_url = "join/"
-
-  # Navigation Section
-  [params.navigation]
-    [[params.navigation.links]]
-      name = "Home"
-      url = "/"
-    [[params.navigation.links]]
-      name = "Calendar"
-      url = "calendar/"
-    [[params.navigation.links]]
-      name = "Contact"
-      url = "contact/"
-    [[params.navigation.links]]
-      name = "Volunteer"
-      url = "volunteer/"
-
- # Footer section
-  [params.footer]
-    copyright = "Cub Scout Pack 959"
-
-    [[params.footer.social]]
-      icon = "fa-facebook"
-      url = "https://www.facebook.com/familyscouting959"
-      label = "Facebook"
-    [[params.footer.social]]
-      icon = "fa-instagram"
-      url = "https://www.instagram.com/pack959"
-      label = "Instagram"
+disableKinds = ["taxonomy", "taxonomyTerm"]

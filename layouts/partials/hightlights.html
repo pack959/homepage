@@ -1,0 +1,17 @@
+<!-- Three -->
+<section id="three" class="wrapper style2">
+    <div class="inner">
+        <h2>{{ .section.title }}</h2>
+        <div class="posts">
+            {{ range $item := .section.items }}
+                <section class="post">
+                    <span class="image"><img src="{{ $item.img_path | relURL }}" alt="" /></span>
+                    <div class="content">
+                        <h3>{{ $item.title }}</h3>
+                        <p>{{ $item.text | markdownify }}</p>
+                    </div>
+                </section>
+            {{ end }}
+        </div>
+    </div>
+</section>

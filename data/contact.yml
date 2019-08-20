@@ -1,0 +1,9 @@
+method:
+  - icon: fa-envelope
+    label: Email
+    value: hello@pack959.com
+    url: mailto:hello@pack959.com
+  - icon: fa-facebook-f
+    label: Facebook
+    value: fb.com/familyscouting959
+    url: https://facebook.com/familyscouting959

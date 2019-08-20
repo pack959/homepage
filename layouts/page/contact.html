@@ -1,0 +1,16 @@
+{{ define "content" }}
+<section id="main" class="wrapper">
+    <div class="inner">
+        <header class="major">
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Params.subtitle | markdownify }}</p>
+        </header>
+        <div class="content">
+            {{ if .Params.center_img_path }}
+                <a href="#" class="image fit"><img src="{{ .Params.center_img_path | relURL }}" alt="" /></a>
+            {{ end}}
+            {{ partial "contact.html" . }}
+        </div>
+    </div>
+</section>
+{{ end }}

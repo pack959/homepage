@@ -1,26 +1,8 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+{{ define "content" }}
 
-    {{ partial "header.html" . }}
+    {{ range $section := .Params.sections }}
+        {{ $include_dict := dict "section" $section "Site" $.Site "page" $ }}
+        {{ partial $section.component $include_dict }}
+    {{ end }}
 
-    <body class="landing">
-        {{ partial "nav" . }}
-        {{ partial "banner.html" . }}
-        {{ partial "home/section-one.html" . }}
-        {{ partial "home/section-two.html" . }}
-        {{ partial "home/section-three.html" . }}
-        {{ partial "footer.html" . }}
-
-        <script>
-            if (window.netlifyIdentity) {
-                window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-                    });
-                }
-                });
-            }
-        </script>
-    </body>
-</html>
+{{ end }}

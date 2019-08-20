@@ -1,11 +1,11 @@
-{{ "<!-- Banner -->" | safeHTML}}
-    <section id="banner">
-        <h1><img src="{{ "images/CubScout.png" | relURL }}" alt="" /></h1>
+<!-- Banner -->
+<section id="banner">
+    {{ range $slide := .section.slides }}
+    <article>
+        <img src="{{ $slide.img_path | relURL }}" alt="" />
         <div class="inner">
-            <h2>Pack 959</h2>
-            <p>Grace Lutheran Church, Hockessin, Delaware</p>
-            <ul class="actions">
-                <li><a href="{{ .Site.Params.join_url | relURL }}" class="button big special">Join</a></li>
-            </ul>
+            <h2><a href="#">{{ $slide.text }}</a></h2>
         </div>
-    </section>
+    </article>
+    {{ end }}
+</section>

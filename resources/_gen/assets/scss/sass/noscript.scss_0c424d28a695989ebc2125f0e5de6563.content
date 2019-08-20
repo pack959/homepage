@@ -1,0 +1,1 @@
+#banner>article{display:none}#banner>article:first-child{background-image:url("../../images/banner.jpg");display:block !important;opacity:1 !important;visibility:visible !important}

@@ -1,0 +1,13 @@
+pages:
+  - label: Home
+    url: /
+  - label: Calendar
+    url: /calendar
+  - label: Contact
+    url: /contact
+  - label: Volunteer
+    url: /volunteer
+
+actions:
+  - label: Join
+    url: /join

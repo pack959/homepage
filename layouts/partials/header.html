@@ -1,42 +1,14 @@
-<head>
-    <title>
-        {{ if .IsHome }}
-            {{ .Site.Title }}
-        {{ else if .Params.heading }}
-            {{ .Params.heading }}
-        {{ else }}
-            {{ .Title }} | {{ .Site.Title }}
-        {{ end }}
-    </title>
-    
-    <meta name="title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end}}">    
-    <meta charset="utf-8">    
-    {{ if .Description }}
-        <meta name="description" content="{{ .Description }}">
-    {{ else if .Site.Params.description }}
-        <meta name="description" content="{{ .Site.Params.description }}">
-    {{ else if .Summary }}
-        <meta name="description" content="{{ .Summary }}">
-    {{ end }}
-
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon.ico" | relURL }}">
-    <meta name="theme-color" content="#FFF">
-    
-    <link rel="canonical" href="{{ .RelPermalink }}">
-    
-    <script src="{{ "js/jquery.min.js" | relURL }}"></script>
-    <script src="{{ "js/skel.min.js" | relURL }}"></script>
-    <script src="{{ "js/skel-layers.min.js" | relURL }}"></script>
-    <script src="{{ "js/init.js" | relURL }}"></script>
-    <noscript>
-        <link rel="stylesheet" href="{{ "css/skel.css" | relURL }}" />
-        <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
-        <link rel="stylesheet" href="{{ "css/style-xlarge.css" | relURL }}" />
-    </noscript>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <style>body{display:none}</style>
-    
-    {{ if .Site.GoogleAnalytics }}
-        {{ template "_internal/google_analytics.html" . }}
-    {{ end }}
-</head>
+<!-- Header -->
+<header id="header" {{ if .IsHome }}class="alt"{{ end }}>
+    <h1><a href="{{ "/" | relURL }}"><img src="{{"images/logo.png" | relURL }}" alt="" /></a></h1>
+    <nav id="nav">
+        <ul>
+            {{ range $item := .Site.Data.menu.pages }}
+                <li><a href="{{ $item.url | relURL }}">{{ $item.label }}</a></li>
+            {{ end }}
+            {{ range $action := .Site.Data.menu.actions }}
+                <li><a href="{{ if strings.HasPrefix $action.url "#" }}{{ $action.url }}{{ else }}{{ $action.url | relURL }}{{ end }}" class="button">{{ $action.label }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</header>

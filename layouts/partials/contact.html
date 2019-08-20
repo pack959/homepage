@@ -1,0 +1,45 @@
+<!-- Contact -->
+<section id="contact" class="wrapper split">
+    <div class="inner">
+        <section>
+            <h2>Send Us A Message</h2>
+            <form method="post" netlify>
+                <div class="row gtr-uniform">
+                    <div class="col-6 col-12-large col-6-medium col-12-xsmall">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" />
+                    </div>
+                    <div class="col-6 col-12-large col-6-medium col-12-xsmall">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" />
+                    </div>
+                    <div class="col-12">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="5"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Send Message" class="primary" /></li>
+                            <li><input type="reset" value="Reset" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section>
+            <h2>Other Ways To Reach Us</h2>
+            <ul class="bulleted-icons">
+                {{ range $method := .Site.Data.contact.method }}
+                    <li>
+                        <span class="icon-wrapper"><span class="icon {{ $method.icon }}"></span></span>
+                        <h3>{{ $method.label }}</h3>
+                        <p>
+                            <a href="{{ $method.url }}">{{ $method.value }}</a>
+                        </p>
+                    </li>
+                {{ end }}
+            </ul>
+        </section>
+    </div>
+</section>
+    

@@ -1,5 +1,5 @@
 ---
-title: "Join Scouts"
+title: Join Scouts
 ---
 
 ## Ready to join Pack 959?
