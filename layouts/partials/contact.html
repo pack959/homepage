@@ -34,7 +34,11 @@
                         <span class="icon-wrapper"><span class="icon {{ $method.icon }}"></span></span>
                         <h3>{{ $method.label }}</h3>
                         <p>
+                            {{ if $method.url }}
                             <a href="{{ $method.url }}">{{ $method.value }}</a>
+                            {{ else }}
+                            {{ $method.value | markdownify }}
+                            {{ end}}
                         </p>
                     </li>
                 {{ end }}
@@ -42,4 +46,3 @@
         </section>
     </div>
 </section>
-    

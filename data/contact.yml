@@ -7,3 +7,8 @@ method:
     label: Facebook
     value: fb.com/familyscouting959
     url: https://facebook.com/familyscouting959
+  - icon: fa-home
+    label: Address
+    value: >-
+      2033 Graves Rd<br/>
+      Hockessin, DE 19707
