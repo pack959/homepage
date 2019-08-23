@@ -14,3 +14,28 @@ command = "hugo --buildFuture --baseURL $DEPLOY_PRIME_URL"
 
 [context.staging]
 command = "hugo --buildFuture --baseURL $DEPLOY_PRIME_URL"
+
+# Redirects
+[[redirects]]
+  from = "/advancements"
+  to = "/"
+
+[[redirects]]
+  from = "/kindergartners-and-cub-scouts"
+  to = "/"
+
+[[redirects]]
+  from = "/family-involvement"
+  to = "/"
+
+[[redirects]]
+  from = "/gallery/*"
+  to = "/"
+
+[[redirects]]
+  from = "/resources"
+  to = "/"
+
+[[redirects]]
+  from = "/why-scouting"
+  to = "/"
