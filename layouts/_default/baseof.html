@@ -4,6 +4,9 @@
         <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {{ if .IsHome }}
+        <meta name="google-site-verification" content="vJy-52s9cFQFeOLPUtVVCE8oeLbBMZdEXNjcAznS-f8" />
+        {{ end }}
 
         <!-- CSS -->
         {{- $inServerMode	:= .Site.IsServer }}
