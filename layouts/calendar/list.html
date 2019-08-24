@@ -4,17 +4,36 @@
         {{ partial "title-header" . }}
         <div class="content">
             {{ partial "center-image" . }}
-            
-            {{ range .Pages.GroupByDate "January 2006" "asc" }} 
-            <p>    
-                <h5>{{ .Key }}</h5>
-                <ul style="list-style: none;">
-                    {{ range sort .Pages "Date" }}
-                       {{ .Render "li" }}
-                    {{ end }}
-                </ul>
-            </p>
-            {{ end }}
+
+            <section id="upcoming">
+                <h2 class="alt">Upcoming Events</h2>
+                {{ $upcoming := where .Pages ".Date" "ge" now }}
+                {{ range $upcoming.GroupByDate "January 2006" "asc" }} 
+                <p>    
+                    <h5>{{ .Key }}</h5>
+                    <ul style="list-style: none;">
+                        {{ range sort .Pages "Date" }}
+                        {{ .Render "li" }}
+                        {{ end }}
+                    </ul>
+                </p>
+                {{ end }}
+            </section>
+            <br/><br/>
+            <section id="past-events">
+                <h2 class="alt">Past Events</h2>
+                {{ $past := where .Pages ".Date" "lt" now }}
+                {{ range $past.GroupByDate "January 2006" "asc" }} 
+                <p>    
+                    <h5>{{ .Key }}</h5>
+                    <ul style="list-style: none;">
+                        {{ range sort .Pages "Date" }}
+                        {{ .Render "li" }}
+                        {{ end }}
+                    </ul>
+                </p>
+                {{ end }}
+            </section>
         </div>
     </div>
 </section>
