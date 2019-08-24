@@ -34,6 +34,8 @@ func main() {
 		location := strings.Replace(e.Location, "Grace Lutheran Church, Hockessin, Delaware 19707", "Grace Lutheran Church", -1)
 		location = strings.TrimSuffix(location, ", USA")
 
+		description := strings.Replace(e.Description, "\\n", "<br>", -1)
+
 		data := fmt.Sprintf(template,
 			e.Summary,
 			e.Start.Format("2006-01-02T15:04:05-0700"),
@@ -41,7 +43,7 @@ func main() {
 			start.Format("2006-01-02"),
 			end.Format("2006-01-02"),
 			location,
-			e.Description)
+			description)
 		filename := fmt.Sprintf("../../content/calendar/%s.md", strings.Replace(e.Uid, "@google.com", "", 1))
 		writeToFile(filename, data)
 	}

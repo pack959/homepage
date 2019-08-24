@@ -10,7 +10,7 @@
                 {{ $upcoming := where .Pages ".Date" "ge" (now.AddDate 0 0 -1) }}
                 {{ range $upcoming.GroupByDate "January 2006" "asc" }} 
                 <p>    
-                    <h5>{{ .Key }}</h5>
+                    <h5 class="alt">{{ .Key }}</h5>
                     <ul style="list-style: none;">
                         {{ range sort .Pages "Date" }}
                         {{ .Render "li" }}
@@ -25,7 +25,7 @@
                 {{ $past := where .Pages ".Date" "lt" (now.AddDate 0 0 -1) }}
                 {{ range $past.GroupByDate "January 2006" "asc" }} 
                 <p>    
-                    <h5>{{ .Key }}</h5>
+                    <h5 class="alt">{{ .Key }}</h5>
                     <ul style="list-style: none;">
                         {{ range sort .Pages "Date" }}
                         {{ .Render "li" }}
