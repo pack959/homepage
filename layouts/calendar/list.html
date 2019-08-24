@@ -7,7 +7,7 @@
 
             <section id="upcoming">
                 <h2 class="alt">Upcoming Events</h2>
-                {{ $upcoming := where .Pages ".Date" "ge" now }}
+                {{ $upcoming := where .Pages ".Date" "ge" (now.AddDate 0 -1 0) }}
                 {{ range $upcoming.GroupByDate "January 2006" "asc" }} 
                 <p>    
                     <h5>{{ .Key }}</h5>
