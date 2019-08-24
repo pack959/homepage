@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"strings"
 	"time"
 
 	"genevent/gocal"
@@ -29,14 +30,19 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
+
+		location := strings.Replace(e.Location, "Grace Lutheran Church, Hockessin, Delaware 19707", "Grace Lutheran Church", -1)
+		location = strings.TrimSuffix(location, ", USA")
+
 		data := fmt.Sprintf(template,
 			e.Summary,
 			e.Start.Format("2006-01-02T15:04:05-0700"),
 			dateStr,
 			start.Format("2006-01-02"),
 			end.Format("2006-01-02"),
-			e.Location, e.Description)
-		filename := fmt.Sprintf("../../content/newcalendar/%s.md", e.Uid)
+			location,
+			e.Description)
+		filename := fmt.Sprintf("../../content/calendar/%s.md", strings.Replace(e.Uid, "@google.com", "", 1))
 		writeToFile(filename, data)
 	}
 

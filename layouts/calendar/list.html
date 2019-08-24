@@ -8,7 +8,7 @@
             {{ range .Pages.GroupByDate "January 2006" "asc" }} 
             <p>    
                 <h5>{{ .Key }}</h5>
-                <ul>
+                <ul style="list-style: none;">
                     {{ range sort .Pages "Date" }}
                        {{ .Render "li" }}
                     {{ end }}

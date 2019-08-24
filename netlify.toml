@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo --minify"
+command = "make"
 
 [build.environment]
 HUGO_VERSION = "0.57.2"
@@ -10,10 +10,10 @@ GO_VERSION = "1.12"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
-command = "hugo --buildFuture --baseURL $DEPLOY_PRIME_URL"
+environment = { HUGOARGS = "--buildFuture --baseURL $DEPLOY_PRIME_URL" }
 
 [context.staging]
-command = "hugo --buildFuture --baseURL $DEPLOY_PRIME_URL"
+environment = { HUGOARGS = "--buildFuture --baseURL $DEPLOY_PRIME_URL" }
 
 # Redirects
 [[redirects]]
