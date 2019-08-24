@@ -2,14 +2,13 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 	"strconv"
 	"time"
 
 	"genevent/gocal"
-
-	"github.com/k0kubun/pp"
 )
 
 func main() {
@@ -19,20 +18,26 @@ func main() {
 	}
 	defer resp.Body.Close()
 
-	start, end := time.Date(2019, 8, 5, 0, 0, 0, 0, time.UTC), time.Date(2020, 6, 30, 0, 0, 0, 0, time.UTC)
+	start, end := time.Date(2019, 8, 5, 0, 0, 0, 0, time.UTC), time.Date(2020, 7, 31, 0, 0, 0, 0, time.UTC)
 
 	c := gocal.NewParser(resp.Body)
 	c.Start, c.End = &start, &end
 	c.Parse()
-
-	pp.Print(c.Events)
 
 	for _, e := range c.Events {
 		dateStr, err := createDateString(e.StartString, e.EndString, e.Start, e.End)
 		if err != nil {
 			panic(err)
 		}
-		fmt.Printf(template, e.Summary, dateStr, e.Location, e.Description)
+		data := fmt.Sprintf(template,
+			e.Summary,
+			e.Start.Format("2006-01-02T15:04:05-0700"),
+			dateStr,
+			start.Format("2006-01-02"),
+			end.Format("2006-01-02"),
+			e.Location, e.Description)
+		filename := fmt.Sprintf("../../content/newcalendar/%s.md", e.Uid)
+		writeToFile(filename, data)
 	}
 
 	os.Exit(0)
@@ -96,11 +101,27 @@ func createTimeString(date time.Time) string {
 	return date.Format("3pm")
 }
 
-var template = `
----
-title: %s
-date: %s
-location: %s
+func writeToFile(filename string, data string) error {
+	file, err := os.Create(filename)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	_, err = io.WriteString(file, data)
+	if err != nil {
+		return err
+	}
+	return file.Sync()
+}
+
+var template = `---
+title: "%s"
+date: "%s"
+dateString: "%s"
+publishDate: "%s"
+expiryDate: "%s"
+location: "%s"
 ---
 
 %s

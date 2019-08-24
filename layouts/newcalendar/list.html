@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section id="main" class="wrapper">
+    <div class="inner">
+        {{ partial "title-header" . }}
+        <div class="content">
+            {{ partial "center-image" . }}
+            
+            {{ range .Pages.GroupByDate "January 2006" "asc" }} 
+            <p>    
+                <h5>{{ .Key }}</h5>
+                <ul>
+                    {{ range sort .Pages "Date" }}
+                       {{ .Render "li" }}
+                    {{ end }}
+                </ul>
+            </p>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
