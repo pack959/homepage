@@ -1,5 +1,3 @@
-BASE_DIR=$(CURDIR)
-
 HUGO=hugo
 HUGOARGS?=--minify
 

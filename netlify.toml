@@ -12,9 +12,6 @@ HUGO_ENV = "production"
 [context.deploy-preview]
 environment = { HUGOARGS = "--buildFuture --baseURL $DEPLOY_PRIME_URL" }
 
-[context.staging]
-environment = { HUGOARGS = "--buildFuture --baseURL $DEPLOY_PRIME_URL" }
-
 # Redirects
 [[redirects]]
   from = "/advancements"
