@@ -1,0 +1,10 @@
+{{ range .GroupByDate "January 2006" "asc" }} 
+<p>    
+    <h5 class="alt">{{ .Key }}</h5>
+    <ul style="list-style: none;">
+        {{ range sort .Pages "Date" }}
+        {{ .Render "li" }}
+        {{ end }}
+    </ul>
+</p>
+{{ end }}

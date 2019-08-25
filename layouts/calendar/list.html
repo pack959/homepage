@@ -8,31 +8,13 @@
             <section id="upcoming">
                 <h2 class="alt">Upcoming Events</h2>
                 {{ $upcoming := where .Pages ".Date" "ge" (now.AddDate 0 0 -1) }}
-                {{ range $upcoming.GroupByDate "January 2006" "asc" }} 
-                <p>    
-                    <h5 class="alt">{{ .Key }}</h5>
-                    <ul style="list-style: none;">
-                        {{ range sort .Pages "Date" }}
-                        {{ .Render "li" }}
-                        {{ end }}
-                    </ul>
-                </p>
-                {{ end }}
+                {{ partial "calendar-list" $upcoming }}
             </section>
             <br/><br/>
             <section id="past-events">
                 <h2 class="alt">Past Events</h2>
                 {{ $past := where .Pages ".Date" "lt" (now.AddDate 0 0 -1) }}
-                {{ range $past.GroupByDate "January 2006" "asc" }} 
-                <p>    
-                    <h5 class="alt">{{ .Key }}</h5>
-                    <ul style="list-style: none;">
-                        {{ range sort .Pages "Date" }}
-                        {{ .Render "li" }}
-                        {{ end }}
-                    </ul>
-                </p>
-                {{ end }}
+                {{ partial "calendar-list" $past }}
             </section>
         </div>
     </div>
