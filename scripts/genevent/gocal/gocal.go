@@ -63,15 +63,16 @@ func (gc *Gocal) Parse() error {
 			if gc.buffer.IsRecurring {
 				rInstances = append(rInstances, gc.ExpandRecurringEvent(gc.buffer)...)
 			} else {
-				if gc.buffer.End != nil {
-					if gc.buffer.End == nil || gc.buffer.Start == nil {
-						continue
-					}
-					if gc.buffer.End.Before(*gc.Start) || gc.buffer.Start.After(*gc.End) {
-						continue
-					}
-				} else {
+				if gc.buffer.Start == nil {
+					continue
+				}
+				// Google Calendar does not output an end date when the start and
+				// end date are the same
+				if gc.buffer.End == nil {
 					gc.buffer.End = gc.buffer.Start
+				}
+				if gc.buffer.End.Before(*gc.Start) || gc.buffer.Start.After(*gc.End) {
+					continue
 				}
 
 				gc.Events = append(gc.Events, *gc.buffer)
