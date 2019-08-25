@@ -35,9 +35,11 @@ func main() {
 			panic(err)
 		}
 
+		// Clean up locations
 		location := strings.Replace(e.Location, "Grace Lutheran Church, Hockessin, Delaware 19707", "Grace Lutheran Church", -1)
 		location = strings.TrimSuffix(location, ", USA")
 
+		// Replace text in the description that is incompatible with Hugo content
 		description := strings.Replace(e.Description, "\\n", "<br>", -1)
 
 		// Only include letters and numbers in url
@@ -45,7 +47,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		sanitizedTitle := reg.ReplaceAllString(e.Summary, "")
+		sanitizedTitle := reg.ReplaceAllString(strings.TrimPrefix(e.Summary, "Tentative: "), "")
 		url := fmt.Sprintf("calendar/%s_%s", e.Start.Format("20060102"), sanitizedTitle)
 
 		data := fmt.Sprintf(template,
