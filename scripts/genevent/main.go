@@ -102,13 +102,13 @@ func createDateString(startStr, endStr string, start, end *time.Time) (string, *
 	if dateEqual(locStart, locEnd) {
 		dt := locStart.Format("1/2/2006")
 		if locStart.Format("pm") == locEnd.Format("pm") {
-			return fmt.Sprintf("%s %s-%s", dt, locStart.Format("3"), createTimeString(locEnd)), &locStart, nil
+			return fmt.Sprintf("%s %s-%s", dt, createTimeString(locStart, true), createTimeString(locEnd, false)), &locStart, nil
 		}
-		return fmt.Sprintf("%s %s-%s", dt, createTimeString(locStart), createTimeString(locEnd)), &locStart, nil
+		return fmt.Sprintf("%s %s-%s", dt, createTimeString(locStart, false), createTimeString(locEnd, false)), &locStart, nil
 	}
 
 	// When dates are different
-	return fmt.Sprintf("%s %s - %s %s", locStart.Format("1/2/2006"), createTimeString(locStart), locEnd.Format("1/2/2006"), createTimeString(locEnd)), &locStart, nil
+	return fmt.Sprintf("%s %s - %s %s", locStart.Format("1/2/2006"), createTimeString(locStart, false), locEnd.Format("1/2/2006"), createTimeString(locEnd, false)), &locStart, nil
 }
 
 func dateEqual(date1, date2 time.Time) bool {
@@ -117,11 +117,15 @@ func dateEqual(date1, date2 time.Time) bool {
 	return y1 == y2 && m1 == m2 && d1 == d2
 }
 
-func createTimeString(date time.Time) string {
+func createTimeString(date time.Time, omitAmPm bool) string {
+	format := "3"
 	if date.Minute() > 0 {
-		return date.Format("3:04pm")
+		format += ":04"
 	}
-	return date.Format("3pm")
+	if !omitAmPm {
+		format += "pm"
+	}
+	return date.Format(format)
 }
 
 func writeToFile(filename string, data string) error {
