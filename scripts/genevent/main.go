@@ -3,14 +3,18 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
 
 	"genevent/gocal"
 )
+
+var loc, _ = time.LoadLocation("America/New_York")
 
 func main() {
 	resp, err := http.Get("https://calendar.google.com/calendar/ical/cubscouts%40pack959.com/public/basic.ics")
@@ -26,7 +30,7 @@ func main() {
 	c.Parse()
 
 	for _, e := range c.Events {
-		dateStr, err := createDateString(e.StartString, e.EndString, e.Start, e.End)
+		dateStr, startDate, err := createDateString(e.StartString, e.EndString, e.Start, e.End)
 		if err != nil {
 			panic(err)
 		}
@@ -36,13 +40,22 @@ func main() {
 
 		description := strings.Replace(e.Description, "\\n", "<br>", -1)
 
+		// Only include letters and numbers in url
+		reg, err := regexp.Compile("[^a-zA-Z0-9]+")
+		if err != nil {
+			log.Fatal(err)
+		}
+		sanitizedTitle := reg.ReplaceAllString(e.Summary, "")
+		url := fmt.Sprintf("calendar/%s_%s", e.Start.Format("20060102"), sanitizedTitle)
+
 		data := fmt.Sprintf(template,
 			e.Summary,
-			e.Start.Format("2006-01-02T15:04:05-0700"),
+			startDate.Format("2006-01-02T15:04:05-0700"),
 			dateStr,
 			start.Format("2006-01-02"),
 			end.Format("2006-01-02"),
 			location,
+			url,
 			description)
 		filename := fmt.Sprintf("../../content/calendar/%s.md", strings.Replace(e.Uid, "@google.com", "", 1))
 		writeToFile(filename, data)
@@ -51,23 +64,23 @@ func main() {
 	os.Exit(0)
 }
 
-func createDateString(startStr, endStr string, start, end *time.Time) (string, error) {
+func createDateString(startStr, endStr string, start, end *time.Time) (string, *time.Time, error) {
 	// If only working with dates and not times, simply check if date or
 	// date range
 	if len(startStr) == 8 {
 		startI, err := strconv.Atoi(startStr)
 		if err != nil {
-			return "", err
+			return "", nil, err
 		}
 		endI, err := strconv.Atoi(endStr)
 		if err != nil {
-			return "", nil
+			return "", nil, nil
 		}
 
 		if endI-startI == 1 {
-			return start.Format("1/2/2006"), nil
+			return start.Format("1/2/2006"), start, nil
 		}
-		return fmt.Sprintf("%s - %s", start.Format("1/2/2006"), end.Format("1/2/2006")), nil
+		return fmt.Sprintf("%s - %s", start.Format("1/2/2006"), end.Format("1/2/2006")), start, nil
 	}
 
 	// Get localized datetime
@@ -78,22 +91,22 @@ func createDateString(startStr, endStr string, start, end *time.Time) (string, e
 	// If start and end are equal, just return the start datetime
 	if start.Equal(*end) {
 		if start.Minute() > 0 {
-			return locStart.Format("1/2/2006 3:04pm"), nil
+			return locStart.Format("1/2/2006 3:04pm"), &locStart, nil
 		}
-		return locStart.Format("1/2/2006 3pm"), nil
+		return locStart.Format("1/2/2006 3pm"), &locStart, nil
 	}
 
 	// When dates are equal
 	if dateEqual(locStart, locEnd) {
-		dt := start.Format("1/2/2006")
+		dt := locStart.Format("1/2/2006")
 		if locStart.Format("pm") == locEnd.Format("pm") {
-			return fmt.Sprintf("%s %s-%s", dt, locStart.Format("3"), createTimeString(locEnd)), nil
+			return fmt.Sprintf("%s %s-%s", dt, locStart.Format("3"), createTimeString(locEnd)), &locStart, nil
 		}
-		return fmt.Sprintf("%s %s-%s", dt, createTimeString(locStart), createTimeString(locEnd)), nil
+		return fmt.Sprintf("%s %s-%s", dt, createTimeString(locStart), createTimeString(locEnd)), &locStart, nil
 	}
 
 	// When dates are different
-	return fmt.Sprintf("%s %s - %s %s", locStart.Format("1/2/2006"), createTimeString(locStart), locEnd.Format("1/2/2006"), createTimeString(locEnd)), nil
+	return fmt.Sprintf("%s %s - %s %s", locStart.Format("1/2/2006"), createTimeString(locStart), locEnd.Format("1/2/2006"), createTimeString(locEnd)), &locStart, nil
 }
 
 func dateEqual(date1, date2 time.Time) bool {
@@ -130,6 +143,7 @@ dateString: "%s"
 publishDate: "%s"
 expiryDate: "%s"
 location: "%s"
+url: "%s"
 ---
 
 %s
