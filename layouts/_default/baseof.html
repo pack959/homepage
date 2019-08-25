@@ -8,6 +8,8 @@
         <meta name="google-site-verification" content="vJy-52s9cFQFeOLPUtVVCE8oeLbBMZdEXNjcAznS-f8" />
         {{ end }}
 
+        <link rel="apple-touch-icon" href="{{ "icon.png" | relURL }}">
+
         <!-- CSS -->
         {{- $inServerMode	:= .Site.IsServer }}
         {{- $cssTarget		:= "assets/css/main.css" }}
