@@ -21,7 +21,7 @@
             <link rel="stylesheet" href="{{ $style.RelPermalink }}">
         </noscript>
         
-        {{ if not .Site.IsServer }}
+        {{ if eq (getenv "HUGO_ENV") "production" }}
         {{ template "_internal/google_analytics.html" . }}
         {{ end }}
     </head>
