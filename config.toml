@@ -2,4 +2,4 @@ title = "Pack 959 - Hockessin, Delaware"
 baseURL = "https://www.pack959.com/"
 googleAnalytics = "UA-145912342-1"
 
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
