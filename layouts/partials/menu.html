@@ -10,6 +10,6 @@
           {{ $class = "button" }}
         {{ end }}
         
-        <li><a href="#"{{ with $class }} class="{{ . }}"{{ end }}>{{ .Title }}</a></li>
+        <li><a href="{{ $url }}"{{ with $class }} class="{{ . }}"{{ end }}>{{ .Title }}</a></li>
     {{ end }}
 </ul>
