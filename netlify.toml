@@ -10,7 +10,7 @@ GO_VERSION = "1.12"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
-environment = { HUGOARGS = "--buildFuture --baseURL $DEPLOY_PRIME_URL" }
+environment = { HUGOARGS = "--buildFuture --baseURL $(DEPLOY_PRIME_URL)" }
 
 # Redirects
 [[redirects]]
