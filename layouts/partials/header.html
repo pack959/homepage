@@ -2,13 +2,6 @@
 <header id="header" {{ if .IsHome }}class="alt"{{ end }}>
     <h1><a href="{{ "/" | relURL }}"><img src="{{"images/logo.png" | relURL }}" alt="" /></a></h1>
     <nav id="nav">
-        <ul>
-            {{ range $item := .Site.Data.menu.pages }}
-                <li><a href="{{ $item.url | relURL }}">{{ $item.label }}</a></li>
-            {{ end }}
-            {{ range $action := .Site.Data.menu.actions }}
-                <li><a href="{{ if strings.HasPrefix $action.url "#" }}{{ $action.url }}{{ else }}{{ $action.url | relURL }}{{ end }}" class="button">{{ $action.label }}</a></li>
-            {{ end }}
-        </ul>
+        {{ partial "menu.html" .Site.Menus.main }}
     </nav>
 </header>
