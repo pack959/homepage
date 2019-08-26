@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"genevent/gocal"
+	"github.com/apognu/gocal"
 )
 
 var loc, _ = time.LoadLocation("America/New_York")

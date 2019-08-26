@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"genevent/gocal/parser"
+	"github.com/apognu/gocal/parser"
 )
 
 func NewParser(r io.Reader) *Gocal {
@@ -66,8 +66,6 @@ func (gc *Gocal) Parse() error {
 				if gc.buffer.Start == nil {
 					continue
 				}
-				// Google Calendar does not output an end date when the start and
-				// end date are the same
 				if gc.buffer.End == nil {
 					gc.buffer.End = gc.buffer.Start
 				}
