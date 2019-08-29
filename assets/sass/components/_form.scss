@@ -83,7 +83,7 @@
 		z-index: -1;
 
 		& + label {
-			@include icon;
+			@include icon(false, solid);
 			cursor: pointer;
 			display: inline-block;
 			padding-left: (_size(element-height) * 0.6) + 0.75em;
@@ -98,13 +98,14 @@
 				border: solid 1px;
 				content: '';
 				display: inline-block;
-				height: (_size(element-height) * 0.6);
+				font-size: 0.8em;
+				height: (_size(element-height) * 0.75);
 				left: 0;
-				line-height: (_size(element-height) * 0.575);
+				line-height: (_size(element-height) * 0.75);
 				position: absolute;
 				text-align: center;
 				top: 0;
-				width: (_size(element-height) * 0.6);
+				width: (_size(element-height) * 0.75);
 			}
 		}
 
