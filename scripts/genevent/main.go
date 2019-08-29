@@ -79,16 +79,15 @@ func createDateString(startStr, endStr string, start, end *time.Time) (string, *
 			return "", nil, nil
 		}
 
+		locStart := time.Date(start.Year(), start.Month(), start.Day(), 0, 0, 0, 0, loc)
 		if endI-startI == 1 {
 			// 1/1/2019
-			return start.Format("1/2/2006"), start, nil
+			return start.Format("1/2/2006"), &locStart, nil
 		}
 		// 1/1/2019 - 1/3/2019
-		return fmt.Sprintf("%s - %s", start.Format("1/2/2006"), end.Format("1/2/2006")), start, nil
+		return fmt.Sprintf("%s - %s", start.Format("1/2/2006"), end.Format("1/2/2006")), &locStart, nil
 	}
 
-	// Get localized datetime
-	loc, _ := time.LoadLocation("America/New_York")
 	locStart := start.In(loc)
 	locEnd := end.In(loc)
 
