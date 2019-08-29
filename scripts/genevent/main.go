@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"genevent/gocal"
+	"github.com/apognu/gocal"
 )
 
 var loc, _ = time.LoadLocation("America/New_York")
@@ -80,8 +80,10 @@ func createDateString(startStr, endStr string, start, end *time.Time) (string, *
 		}
 
 		if endI-startI == 1 {
+			// 1/1/2019
 			return start.Format("1/2/2006"), start, nil
 		}
+		// 1/1/2019 - 1/3/2019
 		return fmt.Sprintf("%s - %s", start.Format("1/2/2006"), end.Format("1/2/2006")), start, nil
 	}
 
@@ -92,22 +94,23 @@ func createDateString(startStr, endStr string, start, end *time.Time) (string, *
 
 	// If start and end are equal, just return the start datetime
 	if start.Equal(*end) {
-		if start.Minute() > 0 {
-			return locStart.Format("1/2/2006 3:04pm"), &locStart, nil
-		}
-		return locStart.Format("1/2/2006 3pm"), &locStart, nil
+		// 1/1/2019 7:30pm
+		return fmt.Sprintf("%s %s", locStart.Format("1/2/2006"), createTimeString(locStart, false)), &locStart, nil
 	}
 
 	// When dates are equal
 	if dateEqual(locStart, locEnd) {
 		dt := locStart.Format("1/2/2006")
 		if locStart.Format("pm") == locEnd.Format("pm") {
+			// 1/1/2019 1-2pm
 			return fmt.Sprintf("%s %s-%s", dt, createTimeString(locStart, true), createTimeString(locEnd, false)), &locStart, nil
 		}
+		// 1/1/2019 1am-2pm
 		return fmt.Sprintf("%s %s-%s", dt, createTimeString(locStart, false), createTimeString(locEnd, false)), &locStart, nil
 	}
 
 	// When dates are different
+	// 7/1/2019 8am - 7/4/2019 4:30pm
 	return fmt.Sprintf("%s %s - %s %s", locStart.Format("1/2/2006"), createTimeString(locStart, false), locEnd.Format("1/2/2006"), createTimeString(locEnd, false)), &locStart, nil
 }
 
