@@ -1,7 +1,6 @@
 ---
-title: Contact - Thanks your for your message
+title: Message Received
+subtitle: Thank you for your message.  Your message was received and we will get back to you shortly. 
 ---
 
-# Contact
 
-Thank you for your message.  We will get back to you shortly.
