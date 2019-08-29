@@ -1,11 +1,6 @@
 ---
 title: Join Scouts
 action: true
-menu:
-  main:
-    title: Join
-    weight: 100
-    identifier: join
 ---
 
 ## Ready to join Pack 959?

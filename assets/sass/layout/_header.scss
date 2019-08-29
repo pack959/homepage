@@ -74,7 +74,7 @@
 					}
 
 					a {
-						@include icon;
+						@include icon(false, solid);
 						border-bottom: 0;
 
 						&:before {
@@ -90,7 +90,7 @@
 		}
 
 		.navPanelToggle {
-			@include icon;
+			@include icon(false, solid);
 			border: 0;
 			height: 4em;
 			position: absolute;
@@ -104,6 +104,7 @@
 				width: 3em;
 				height: 3em;
 				display: block;
+				line-height: inherit;
 				position: absolute;
 				right: 0;
 				top: 0;

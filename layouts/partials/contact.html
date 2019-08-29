@@ -31,7 +31,7 @@
             <ul class="bulleted-icons">
                 {{ range $method := .Site.Data.contact.method }}
                     <li>
-                        <span class="icon-wrapper"><span class="icon {{ $method.icon }}"></span></span>
+                        <span class="icon-wrapper"><i class="icon {{ $method.icon }}"></i></span>
                         <h3>{{ $method.label }}</h3>
                         <p>
                             {{ if $method.url }}

@@ -1,13 +1,13 @@
 method:
-  - icon: fa-envelope
+  - icon: solid fa-envelope
     label: Email
     value: hello@pack959.com
     url: mailto:hello@pack959.com
-  - icon: fa-facebook-f
+  - icon: brands fa-facebook-f
     label: Facebook
     value: fb.com/familyscouting959
     url: https://facebook.com/familyscouting959
-  - icon: fa-home
+  - icon: solid fa-home
     label: Address
     value: >-
       2033 Graves Rd<br/>

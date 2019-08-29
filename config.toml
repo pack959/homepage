@@ -3,3 +3,34 @@ baseURL = "https://www.pack959.com/"
 googleAnalytics = "UA-145912342-1"
 
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+
+## Menus
+[[ menu.main ]]
+title = "Home"
+url = "/"
+identifier = "index"
+weight = 10
+
+[[ menu.main ]]
+title = "Calendar"
+url = "/calendar/"
+identifier = "calendar"
+weight = 20
+
+[[ menu.main ]]
+title = "Contact"
+url = "/contact/"
+identifier = "contact"
+weight = 30
+
+[[ menu.main ]]
+title = "Volunteer"
+url = "/volunteer/"
+identifier = "volunteer"
+weight = 40
+
+[[ menu.main ]]
+title = "Join"
+url = "/join/"
+identifier = "join"
+weight = 100

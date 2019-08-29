@@ -4,11 +4,6 @@ subtitle: >-
   Cub Scouting is fun for the whole family.  Getting everyone involved makes the experience more meaningful for 
   your Cub Scout.  There is a place for every parent, legal guardian, or other caring adults who want to help.  
   Often the challenge is not knowing how to help.  Below are some helpful steps in how you can volunteer.
-menu:
-  main:
-    title: Volunteer
-    weight: 30
-    identifier: volunteer
 #center_img_path: /images/Slime.jpg
 ---
 
