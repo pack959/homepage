@@ -6,17 +6,16 @@
         {{ end }}
 
         {{ $class := "" }}
-        {{ $liclass := "" }}
         {{ if eq .Identifier "join" }}
           {{ $class = "button" }}
         {{ else if .HasChildren }}
           {{ $class = "submenu fa-angle-down" }}
-          {{ $liclass = "opener" }}
         {{ end }}
         
-        <li{{ with $liclass }} class="{{ . }}"{{ end }}><a href="{{ $url }}"{{ with $class }} class="{{ . }}"{{ end }}>{{ .Title }}</a></li>
+        <li><a href="{{ $url }}"{{ with $class }} class="{{ . }}"{{ end }}>{{ .Title }}</a>
         {{ if .HasChildren }}
             {{ partial "menu.html" .Children }}
         {{ end }}
+        </li>
     {{ end }}
 </ul>
