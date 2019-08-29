@@ -8,8 +8,14 @@
         {{ $class := "" }}
         {{ if eq .Identifier "join" }}
           {{ $class = "button" }}
+        {{ else if .HasChildren }}
+          {{ $class = "submenu fa-angle-down" }}
         {{ end }}
         
-        <li><a href="{{ $url }}"{{ with $class }} class="{{ . }}"{{ end }}>{{ .Title }}</a></li>
+        <li><a href="{{ $url }}"{{ with $class }} class="{{ . }}"{{ end }}>{{ .Title }}</a>
+        {{ if .HasChildren }}
+            {{ partial "menu.html" .Children }}
+        {{ end }}
+        </li>
     {{ end }}
 </ul>
