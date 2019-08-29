@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"genevent/gocal/parser"
+	"github.com/apognu/gocal/parser"
 )
 
 type Gocal struct {
@@ -32,8 +32,9 @@ func (ctx *Context) Nest(value int) *Context {
 }
 
 func (gc *Gocal) IsInRange(d Event) bool {
-	if (d.Start.After(*gc.Start) && d.Start.Before(*gc.End)) ||
-		(d.End.After(*gc.Start) && d.End.Before(*gc.End)) {
+	if (d.Start.Before(*gc.Start) && d.End.After(*gc.Start)) ||
+		(d.Start.After(*gc.Start) && d.End.Before(*gc.End)) ||
+		(d.Start.Before(*gc.End) && d.End.After(*gc.End)) {
 		return true
 	}
 	return false
