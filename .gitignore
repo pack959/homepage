@@ -2,3 +2,6 @@
 /public/
 /resources/
 /content/calendar/*.md
+
+# Local Netlify folder
+.netlify
