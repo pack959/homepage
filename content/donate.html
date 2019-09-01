@@ -12,14 +12,15 @@ private: true
             <div class="col-6 col-12-xsmall">
                 <div class="col-12">
                     <label for="name">Name</label>
-                    <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+                    <input type="text" name="demo-name" id="name" value="" placeholder="Name" />
                 </div>
                 <div class="col-12">
-                    <label for="name">Email</label>
-                    <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+                    <label for="email">Email</label>
+                    <input type="email" name="demo-email" id="email" value="" placeholder="Email" />
                 </div>
                 <div class="col-6 col-12-xsmall">
-                    <input type="number" min="1" step="1" max="500" value="" placeholder="Amount"/>
+                    <label for="amount">Amount</label>
+                    <input type="number" min="1" step="1" max="500" value="" id="amount" placeholder="Amount"/>
                 </div>
                 <div class="col-12">
                     <ul class="actions">
@@ -40,10 +41,14 @@ private: true
             event.preventDefault();
             
             var post_url = $(this).attr("action");
-            var data = $(this).serialize();
-            data.public_url = "{{.Site.BaseURL}}"
-            data.success_path = "/success"
-            data.cancel_path = "/cancel"
+            var data = {
+                "public_url": "{{.Site.BaseURL}}",
+                "success_path": "/success",
+                "cancell_path": "/cancel",
+                "name": $("#name").val(),
+                "email": $("#email").val(),
+                "amount": $("#amount").val(),
+            }
 
             $.post({
                 url : post_url,
