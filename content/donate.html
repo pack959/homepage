@@ -1,0 +1,64 @@
+---
+title: Donate
+private: true
+---
+
+<script src="https://js.stripe.com/v3/"></script>
+
+        
+<section>
+    <form id="donation" method="POST" action="/.netlify/functions/checkout">
+        <div class="row">
+            <div class="col-6 col-12-xsmall">
+                <div class="col-12">
+                    <label for="name">Name</label>
+                    <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+                </div>
+                <div class="col-12">
+                    <label for="name">Email</label>
+                    <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input type="number" min="1" step="1" max="500" value="" placeholder="Amount"/>
+                </div>
+                <div class="col-12">
+                    <ul class="actions">
+                        <li><input id="submit" type="submit" value="Donate" class="primary" /></li>
+                        <li><input type="reset" value="Reset" /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var stripe = Stripe('pk_test_CkxIk5MuRlh4biLGLlNjR26t008cpMxTBo');
+
+        $("#donation").submit(function(event){
+            event.preventDefault();
+            
+            var post_url = $(this).attr("action");
+            var data = $(this).serialize();
+            data.public_url = "{{.Site.BaseURL}}"
+            data.success_path = "/success"
+            data.cancel_path = "/cancel"
+
+            $.post({
+                url : post_url,
+                data : data,
+                dataType: "text",
+            }).done(function(response){ //
+                stripe.redirectToCheckout({
+                    sessionId: response
+                }).then(function (result) {
+                    // If `redirectToCheckout` fails due to a browser or network
+                    // error, display the localized error message to your customer
+                    // using `result.error.message`.
+                });
+            });
+        });
+    });
+</script>
+
