@@ -6,8 +6,6 @@ import (
 	"log"
 	"os"
 
-	"checkout/stripe"
-
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 )
@@ -47,7 +45,7 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 	if !found {
 		return nil, errors.New("environment variable not set")
 	}
-	processor := stripe.New(data.PublicURL, key)
+	processor := NewStripeProcessor(data.PublicURL, key)
 
 	session := processor.CreateSession(data.SuccessPath, data.CancelPath)
 	session.AddItem("abc", "def", 123, 1)

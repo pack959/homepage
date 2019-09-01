@@ -1,4 +1,4 @@
-package stripe
+package main
 
 import (
 	"errors"
@@ -8,14 +8,14 @@ import (
 	"github.com/stripe/stripe-go/checkout/session"
 )
 
-type Processor struct {
+type StripeProcessor struct {
 	publicURL string
 }
 
-func New(publicURL, stripeKey string) *Processor {
+func NewStripeProcessor(publicURL, stripeKey string) *StripeProcessor {
 	stripe.Key = stripeKey
 
-	return &Processor{
+	return &StripeProcessor{
 		publicURL: publicURL,
 	}
 }
@@ -23,10 +23,10 @@ func New(publicURL, stripeKey string) *Processor {
 type Session struct {
 	checkoutSession *stripe.CheckoutSession
 	checkoutParams  *stripe.CheckoutSessionParams
-	processor       *Processor
+	processor       *StripeProcessor
 }
 
-func (p Processor) CreateSession(successPath, cancelPath string) *Session {
+func (p StripeProcessor) CreateSession(successPath, cancelPath string) *Session {
 	successURL := path.Join(p.publicURL, successPath)
 	cancelURL := path.Join(p.publicURL, cancelPath)
 
