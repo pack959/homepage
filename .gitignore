@@ -1,4 +1,5 @@
 .DS_Store
+/functions/
 /public/
 /resources/
 /content/calendar/*.md

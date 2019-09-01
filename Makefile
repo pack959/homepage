@@ -8,9 +8,9 @@ genevents:
 	cd scripts/genevent && go run main.go
 
 functions:
-    mkdir -p functions
+	mkdir -p functions
 	go build -o functions/checkout ./assets/lambda/checkout
 
 default: build
 
-.PHONY: build genevents default
+.PHONY: build genevents default functions

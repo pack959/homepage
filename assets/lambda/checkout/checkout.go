@@ -49,10 +49,7 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 	}
 	processor := stripe.New(data.PublicURL, key)
 
-	session, err := processor.CreateCheckoutSession(data.SuccessPath, data.CancelPath)
-	if err != nil {
-		return nil, err
-	}
+	session := processor.CreateSession(data.SuccessPath, data.CancelPath)
 	session.AddItem("abc", "def", 123, 1)
 	session.Start()
 
@@ -61,9 +58,16 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 	// }
 	// responseJSON, _ := json.Marshal(response)
 
+	sessionID, err := session.GetID()
+	if err != nil {
+		return &events.APIGatewayProxyResponse{
+			StatusCode: 500,
+		}, nil
+	}
+
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       session.GetID(),
+		Body:       sessionID,
 	}, nil
 }
 
