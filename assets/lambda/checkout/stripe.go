@@ -2,7 +2,7 @@ package main
 
 import (
 	"errors"
-	"path"
+	"fmt"
 
 	"github.com/stripe/stripe-go"
 	"github.com/stripe/stripe-go/checkout/session"
@@ -27,8 +27,8 @@ type Session struct {
 }
 
 func (p StripeProcessor) CreateSession(successPath, cancelPath string) *Session {
-	successURL := path.Join(p.publicURL, successPath)
-	cancelURL := path.Join(p.publicURL, cancelPath)
+	successURL := fmt.Sprintf("%s/%s", p.publicURL, successPath)
+	cancelURL := fmt.Sprintf("%s/%s", p.publicURL, cancelPath)
 
 	return &Session{
 		processor: &p,
