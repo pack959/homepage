@@ -37,6 +37,7 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 	if err := json.Unmarshal([]byte(request.Body), data); err != nil {
 		return &events.APIGatewayProxyResponse{
 			StatusCode: 503,
+			Body:       err.Error(),
 		}, nil
 	}
 
