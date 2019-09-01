@@ -28,7 +28,7 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 	defer resp.Body.Close()
 
 	headers := map[string]string{
-		"Location": "/",
+		"Location": "/site/success/",
 	}
 
 	return &events.APIGatewayProxyResponse{
