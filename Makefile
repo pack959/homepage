@@ -9,7 +9,7 @@ genevents:
 
 functions:
 	mkdir -p functions
-	cd ./assets/lambda/manual-deploy && go build -o ../../../functions/manual-deploy .
+	cd ./assets/lambda/manual-deploy && go get ./... && go build -o ../../../functions/manual-deploy .
 
 default: build
 
