@@ -50,7 +50,12 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 
 	session := processor.CreateSession(data.SuccessPath, data.CancelPath)
 	session.AddItem("abc", "def", 123, 1)
-	session.Start()
+	if err := session.Start(); err != nil {
+		return &events.APIGatewayProxyResponse{
+			StatusCode: 503,
+			Body:       err.Error(),
+		}, nil
+	}
 
 	// response := map[string]interface{}{
 	// 	"session_id": session.GetID(),
