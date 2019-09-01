@@ -9,6 +9,7 @@ genevents:
 
 functions:
 	mkdir -p functions
+	go get ./...
 	go build -o functions/checkout ./assets/lambda/checkout
 
 default: build
