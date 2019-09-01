@@ -34,3 +34,67 @@ title = "Join"
 url = "/join/"
 identifier = "join"
 weight = 100
+
+## Submenus
+[[ menu.main ]]
+title = "Pack"
+url = "/calendar/"
+identifier = "pack_calendar"
+weight = 10
+parent = "calendar"
+
+[[ menu.main ]]
+title = "Leader"
+url = "/calendar/leader/"
+weight = 20
+identifier = "leader"
+parent = "calendar"
+
+[[ menu.main ]]
+title = "Rank"
+url = "#"
+weight = 30
+identifier = "rank"
+parent = "calendar"
+
+[[ menu.main ]]
+title = "Lion"
+url = "/calendar/lion/"
+weight = 10
+identifier = "lion"
+parent = "rank"
+
+[[ menu.main ]]
+title = "Tiger"
+url = "/calendar/tiger/"
+weight = 20
+identifier = "tiger"
+parent = "rank"
+
+[[ menu.main ]]
+title = "Wolf"
+url = "/calendar/wolf/"
+weight = 30
+identifier = "wolf"
+parent = "rank"
+
+[[ menu.main ]]
+title = "Bear"
+url = "/calendar/bear/"
+weight = 40
+identifier = "bear"
+parent = "rank"
+
+[[ menu.main ]]
+title = "Webelos"
+url = "/calendar/webelos/"
+weight = 50
+identifier = "webelos"
+parent = "rank"
+
+[[ menu.main ]]
+title = "Arrow of Light"
+url = "/calendar/aol/"
+weight = 60
+identifier = "aol"
+parent = "rank"

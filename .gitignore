@@ -1,5 +1,6 @@
 .DS_Store
-/content/calendar/*.md
+/bin/
+/content/calendar/**/*.md
 /functions/
 /public/
 /resources/

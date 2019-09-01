@@ -1,12 +1,16 @@
 HUGO=hugo
-HUGOARGS?=--minify
+HUGOARGS?=--minify --gc
 
-build: genevents
+build: buildgo genevents
 	$(HUGO) $(HUGOARGS)
 
-genevents:
-	cd scripts/genevent && go run main.go
+genevents: buildgo
+	./bin/genevent https://calendar.google.com/calendar/ical/cubscouts%40pack959.com/public/basic.ics 8/5/2019 7/31/2020 ./content/calendar/
+
+buildgo:
+	mkdir -p bin
+	cd scripts/genevent && go build -o ../../bin/genevent .
 
 default: build
 
-.PHONY: build genevents default
+.PHONY: build buildgo genevents default
