@@ -1,7 +1,11 @@
 .DS_Store
+/content/calendar/*.md
+/functions/
 /public/
 /resources/
-/content/calendar/*.md
 
 # Local Netlify folder
 .netlify
+
+# Dotenv File
+.env
