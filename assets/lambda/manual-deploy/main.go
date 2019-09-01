@@ -21,11 +21,8 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 		return nil, errors.New("environment variable not set")
 	}
 
-	resp, err := http.Post(url, "application/json", bytes.NewBuffer([]byte(`{}`)))
-	if err == nil {
-		return nil, errors.New("error posting to webhook")
-	}
-	defer resp.Body.Close()
+	// ignore all errors and responses
+	http.Post(url, "application/json", bytes.NewBuffer([]byte(`{}`)))
 
 	headers := map[string]string{
 		"Location": "/",
