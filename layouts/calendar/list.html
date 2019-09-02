@@ -9,13 +9,13 @@
             {{ $compareDate := (time $today).AddDate 0 0 -1  }}
             <section id="upcoming">
                 <h2 class="alt">Upcoming Events</h2>
-                {{ $upcoming := where .Pages ".Date" "ge" $compareDate }}
+                {{ $upcoming := where (where .Pages ".File.Dir" .File.Dir) ".Date" "ge" $compareDate }}
                 {{ partial "calendar-list" $upcoming }}
             </section>
             <br/><br/>
             <section id="past-events">
                 <h2 class="alt">Past Events</h2>
-                {{ $past := where .Pages ".Date" "lt" $compareDate }}
+                {{ $past := where (where .Pages ".File.Dir" .File.Dir) ".Date" "lt" $compareDate }}
                 {{ partial "calendar-list" $past }}
             </section>
         </div>
