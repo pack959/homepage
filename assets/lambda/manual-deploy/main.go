@@ -11,12 +11,12 @@ import (
 )
 
 const (
-	WebhookURL = "MANUAL_DEPLOY_WEBHOOK"
+	webHookURL = "MANUAL_DEPLOY_WEBHOOK"
 )
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	// Get secret key
-	url, found := os.LookupEnv(WebhookURL)
+	url, found := os.LookupEnv(webHookURL)
 	if !found {
 		return nil, errors.New("environment variable not set")
 	}
