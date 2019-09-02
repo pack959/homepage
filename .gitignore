@@ -4,6 +4,9 @@
 /public/
 /resources/
 
+# Alwasy include index file
+!_index.md
+
 # Local Netlify folder
 .netlify
 
