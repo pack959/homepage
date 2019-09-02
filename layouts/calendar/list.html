@@ -15,7 +15,7 @@
             <br/><br/>
             <section id="past-events">
                 <h2 class="alt">Past Events</h2>
-                {{ $past := where (where .Pages ".IsNode" false) ".Date" "lt" $compareDate }}
+                {{ $past := where (where (where .Pages ".IsNode" false) ".Date" "gt" (now.AddDate -2 0 0)) ".Date" "lt" $compareDate }}
                 {{ partial "calendar-list" $past }}
             </section>
         </div>

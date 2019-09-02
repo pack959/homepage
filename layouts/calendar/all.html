@@ -23,8 +23,15 @@
                                                 <div class="col-1 col-2-large col-3-medium col-4-small" style="text-align:right;">
                                                     {{ .Date.Format "1/2/2006" }}        
                                                 </div>
-                                                <div class="col-11 col-10-large col-9-medium col-8-small">
-                                                    <a href="{{ .RelPermalink }}">{{ if .IsPage }}{{ with .Params.TitlePrefix }}[{{ . }}] {{ end }}{{ end }}{{ .Title }}</a>
+                                                {{ $titleClass := "col-11 col-10-large col-9-medium col-8-small" }}
+                                                {{ if .IsPage }}
+                                                    {{ $titleClass = "col-9 col-8-large col-6-medium col-5-small" }}
+                                                    <div class="col-2 col-2-large col-3-medium col-3-small">
+                                                        {{ with .Params.TitlePrefix }}{{ . }}{{ end }}
+                                                    </div>
+                                                {{ end }}
+                                                <div class="{{ $titleClass}}">
+                                                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                                                 </div>
                                             </div>
                                         </li>
@@ -38,7 +45,7 @@
             <br/><br/>  
             <section id="past-events">
                 <h2 class="alt">Past Events</h2>
-                {{ with where $pages ".Date" "lt" $compareDate }}
+                {{ with where (where $pages ".Date" "gt" (now.AddDate -2 0 0)) ".Date" "lt" $compareDate }}
                     {{ range .GroupByDate "January 2006" "asc" }} 
                         <p>    
                             <h5 class="alt">{{ .Key }}</h5>
@@ -50,7 +57,14 @@
                                                 <div class="col-1 col-2-large col-3-medium col-4-small" style="text-align:right;">
                                                     {{ .Date.Format "1/2/2006" }}        
                                                 </div>
-                                                <div class="col-11 col-10-large col-9-medium col-8-small">
+                                                {{ $titleClass := "col-11 col-10-large col-9-medium col-8-small" }}
+                                                {{ if .IsPage }}
+                                                    {{ $titleClass = "col-9 col-8-large col-6-medium col-5-small" }}
+                                                    <div class="col-2 col-2-large col-3-medium col-3-small">
+                                                        {{ with .Params.TitlePrefix }}{{ . }}{{ end }}
+                                                    </div>
+                                                {{ end }}
+                                                <div class="{{ $titleClass}}">
                                                     <a href="{{ .RelPermalink }}">{{ if .IsPage }}{{ with .Params.TitlePrefix }}{{ . }} | {{ end }}{{ end }}{{ .Title }}</a>
                                                 </div>
                                             </div>
