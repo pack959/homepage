@@ -58,7 +58,7 @@ func main() {
 			log.Fatal(err)
 		}
 		sanitizedTitle := reg.ReplaceAllString(strings.TrimPrefix(e.Summary, "Tentative: "), "")
-		url := fmt.Sprintf("calendar/%s_%s", e.Start.Format("20060102"), sanitizedTitle)
+		url := fmt.Sprintf("%s%s_%s", strings.TrimPrefix(args[3], "./content"), e.Start.Format("20060102"), sanitizedTitle)
 
 		data := fmt.Sprintf(template,
 			e.Summary,
