@@ -1,9 +1,9 @@
 ---
-title: Deploy Site
-subtitle: This button will force a deploy of the site to pick up the latest changes.
-type: single
+title: Site Info
 private: true
 ---
+
+Last Build Date: {{< builddate >}}
 
 <form action="/.netlify/functions/manual-deploy" method="post">
     <button class="button large primary" type="submit">Manual Deploy</button>
