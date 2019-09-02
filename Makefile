@@ -1,7 +1,7 @@
 HUGO=hugo
 HUGOARGS?=--minify --gc
 
-build: buildgo genevents
+build: functions genevents
 	$(HUGO) $(HUGOARGS)
 
 genevents: buildgo
@@ -11,6 +11,10 @@ buildgo:
 	mkdir -p bin
 	cd scripts/genevent && go build -o ../../bin/genevent .
 
+functions:
+	mkdir -p functions
+	cd ./assets/lambda/manual-deploy && go build -o ../../../functions/manual-deploy .
+
 default: build
 
-.PHONY: build buildgo genevents default
+.PHONY: build buildgo genevents functions default

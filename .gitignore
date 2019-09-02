@@ -5,6 +5,9 @@
 /public/
 /resources/
 
+# Always include index file
+!_index.md
+
 # Local Netlify folder
 .netlify
 
