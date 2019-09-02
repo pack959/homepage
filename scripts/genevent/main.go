@@ -61,6 +61,7 @@ func main() {
 		slug := fmt.Sprintf("%s_%s", e.Start.Format("20060102"), sanitizedTitle)
 
 		titlePrefix := strings.Title(strings.TrimSuffix(strings.TrimPrefix(args[3], "./content/calendar/"), "/"))
+		titlePrefix = strings.Replace(titlePrefix, "Aol", "Arrow of Light", 1)
 
 		data := fmt.Sprintf(template,
 			e.Summary,
