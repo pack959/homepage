@@ -72,7 +72,7 @@ func main() {
 			slug,
 			titlePrefix,
 			description)
-		filename := fmt.Sprintf("%s/%s.md", args[3], strings.Replace(e.Uid, "@google.com", "", 1))
+		filename := fmt.Sprintf("%s/%s.generated.md", args[3], strings.Replace(e.Uid, "@google.com", "", 1))
 		writeToFile(filename, data)
 	}
 

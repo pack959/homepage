@@ -1,13 +1,9 @@
 .DS_Store
 /bin/
-/content/calendar/**/*.md
+/content/calendar/**/*.generated.md
 /functions/
 /public/
 /resources/
-
-# Always include index file
-!_index.md
-!/content/calendar/all.md
 
 # Local Netlify folder
 .netlify
