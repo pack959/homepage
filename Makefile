@@ -14,6 +14,7 @@ genevents: buildgo
 	./bin/genevent https://calendar.google.com/calendar/ical/pack959.com_b5633aklqu4e31cldfou9509gs%40group.calendar.google.com/public/basic.ics $(CALSTART) $(CALEND) ./content/calendar/bear/
 	./bin/genevent https://calendar.google.com/calendar/ical/pack959.com_3pjo65dmf1oh075suaspf04kt4%40group.calendar.google.com/public/basic.ics $(CALSTART) $(CALEND) ./content/calendar/webelos/
 	./bin/genevent https://calendar.google.com/calendar/ical/pack959.com_0i2jo8ahu9stn0o9ngboh6ivhg%40group.calendar.google.com/public/basic.ics $(CALSTART) $(CALEND) ./content/calendar/aol/	
+	./bin/genevent https://calendar.google.com/calendar/ical/pack959.com_qarlih8q0akjb5otvt7aclh2hg%40group.calendar.google.com/public/basic.ics $(CALSTART) $(CALEND) ./content/calendar/leader/	
 
 buildgo:
 	mkdir -p bin
