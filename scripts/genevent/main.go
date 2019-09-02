@@ -60,6 +60,8 @@ func main() {
 		sanitizedTitle := reg.ReplaceAllString(strings.TrimPrefix(e.Summary, "Tentative: "), "")
 		slug := fmt.Sprintf("%s_%s", e.Start.Format("20060102"), sanitizedTitle)
 
+		titlePrefix := strings.Title(strings.TrimSuffix(strings.TrimPrefix(args[3], "./content/calendar/"), "/"))
+
 		data := fmt.Sprintf(template,
 			e.Summary,
 			startDate.Format("2006-01-02T15:04:05-0700"),
@@ -68,6 +70,7 @@ func main() {
 			end.Format("2006-01-02"),
 			location,
 			slug,
+			titlePrefix,
 			description)
 		filename := fmt.Sprintf("%s/%s.md", args[3], strings.Replace(e.Uid, "@google.com", "", 1))
 		writeToFile(filename, data)
@@ -162,6 +165,7 @@ publishDate: "%s"
 expiryDate: "%s"
 location: "%s"
 slug: "%s"
+titlePrefix: "%s"
 ---
 
 %s

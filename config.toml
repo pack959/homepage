@@ -98,3 +98,10 @@ url = "/calendar/aol/"
 weight = 60
 identifier = "aol"
 parent = "rank"
+
+[[ menu.main ]]
+title = "All Events"
+url = "/calendar/all/"
+weight = 40
+identifier = "all"
+parent = "calendar"
