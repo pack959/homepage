@@ -39,7 +39,7 @@ weight = 100
 [[ menu.main ]]
 title = "Pack"
 url = "/calendar/"
-identifier = "pack_calendar"
+identifier = "pack"
 weight = 10
 parent = "calendar"
 
