@@ -4,7 +4,7 @@
         <h2>{{ .Params.Title }}</h2>
         <ul class="bulleted-icons">
             <li>
-                <span class="icon-wrapper"><span class="icon fa-calendar"></span></span>
+                <span class="icon-wrapper"><span class="icon solid fa-calendar"></span></span>
                 <h3>Date</h3>
                 <p>
                     {{ .Params.DateString }}
@@ -12,7 +12,7 @@
             </li>
             {{ if .Params.Location }}
             <li>
-                <span class="icon-wrapper"><span class="icon fa-map-marker"></span></span>
+                <span class="icon-wrapper"><span class="icon solid fa-map-marker"></span></span>
                 <h3>Location</h3>
                 <p>
                     <a href="https://maps.google.com/maps?q={{ .Params.Location }}">{{ .Params.Location }}</a>
