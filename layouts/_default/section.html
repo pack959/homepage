@@ -1,0 +1,12 @@
+{{ define "main" }}
+<!-- Main -->
+<section id="main" class="wrapper">
+    <div class="inner">
+        {{ partial "title-header" . }}
+        <div class="content">
+            {{ partial "center-image" . }}
+            {{ .Content }}
+        </div>
+    </div>
+</section>
+{{ end }}
