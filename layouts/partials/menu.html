@@ -8,7 +8,7 @@
         {{ $class := "" }}
         {{ if eq .Identifier "join" }}
           {{ $class = "button" }}
-        {{ else if .HasChildren }}
+        {{ else if eq .KeyName "calendar" }}
           {{ $class = "submenu fa-angle-down" }}
         {{ end }}
         

@@ -17,13 +17,23 @@ import (
 var loc, _ = time.LoadLocation("America/New_York")
 
 func main() {
-	resp, err := http.Get("https://calendar.google.com/calendar/ical/cubscouts%40pack959.com/public/basic.ics")
+	args := os.Args[1:]
+
+	resp, err := http.Get(args[0])
 	if err != nil {
 		panic(err)
 	}
 	defer resp.Body.Close()
 
-	start, end := time.Date(2019, 8, 5, 0, 0, 0, 0, time.UTC), time.Date(2020, 7, 31, 0, 0, 0, 0, time.UTC)
+	start, err := time.Parse("1/2/2006", args[1])
+	if err != nil {
+		log.Fatalf("error parsing start date: %s", err)
+	}
+
+	end, err := time.Parse("1/2/2006", args[2])
+	if err != nil {
+		log.Fatalf("error parsing start date: %s", err)
+	}
 
 	c := gocal.NewParser(resp.Body)
 	c.Start, c.End = &start, &end
@@ -48,7 +58,10 @@ func main() {
 			log.Fatal(err)
 		}
 		sanitizedTitle := reg.ReplaceAllString(strings.TrimPrefix(e.Summary, "Tentative: "), "")
-		url := fmt.Sprintf("calendar/%s_%s", e.Start.Format("20060102"), sanitizedTitle)
+		slug := fmt.Sprintf("%s_%s", e.Start.Format("20060102"), sanitizedTitle)
+
+		titlePrefix := strings.Title(strings.TrimSuffix(strings.TrimPrefix(args[3], "./content/calendar/"), "/"))
+		titlePrefix = strings.Replace(titlePrefix, "Aol", "Arrow of Light", 1)
 
 		data := fmt.Sprintf(template,
 			e.Summary,
@@ -57,9 +70,10 @@ func main() {
 			start.Format("2006-01-02"),
 			end.Format("2006-01-02"),
 			location,
-			url,
+			slug,
+			titlePrefix,
 			description)
-		filename := fmt.Sprintf("../../content/calendar/%s.md", strings.Replace(e.Uid, "@google.com", "", 1))
+		filename := fmt.Sprintf("%s/%s.generated.md", args[3], strings.Replace(e.Uid, "@google.com", "", 1))
 		writeToFile(filename, data)
 	}
 
@@ -151,7 +165,8 @@ dateString: "%s"
 publishDate: "%s"
 expiryDate: "%s"
 location: "%s"
-url: "%s"
+slug: "%s"
+titlePrefix: "%s"
 ---
 
 %s
