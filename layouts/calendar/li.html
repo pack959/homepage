@@ -1,7 +1,7 @@
 <li>
     <div class="row">
         <div class="col-1 col-2-large col-3-medium col-4-small" style="text-align:right;">
-                <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "1/2/2006" }}</time>
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "1/2/2006" }}</time>
         </div>
         <div class="col-11 col-10-large col-9-medium col-8-small">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
