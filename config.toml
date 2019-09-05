@@ -3,6 +3,7 @@ baseURL = "https://www.pack959.com/"
 googleAnalytics = "UA-145912342-1"
 
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+enableRobotsTXT = true
 
 ## Menus
 [[ menu.main ]]
