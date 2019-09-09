@@ -22,7 +22,7 @@ buildgo:
 
 functions:
 	mkdir -p functions
-	cd ./assets/lambda/manual-deploy && go build -o ../../../functions/manual-deploy .
+	cd ./scripts/lambda/manual-deploy && go build -o ../../../functions/manual-deploy .
 
 default: build
 

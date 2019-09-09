@@ -5,6 +5,8 @@ googleAnalytics = "UA-145912342-1"
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 enableRobotsTXT = true
 
+theme = ["pack959"]
+
 ## Menus
 [[ menu.main ]]
 title = "Home"
