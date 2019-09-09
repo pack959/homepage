@@ -58,7 +58,7 @@ func main() {
 			log.Fatal(err)
 		}
 		sanitizedTitle := reg.ReplaceAllString(strings.TrimPrefix(e.Summary, "Tentative: "), "")
-		slug := fmt.Sprintf("%s_%s", e.Start.Format("20060102"), sanitizedTitle)
+		slug := fmt.Sprintf("%s_%s", startDate.Format("20060102"), sanitizedTitle)
 
 		titlePrefix := strings.Title(strings.TrimSuffix(strings.TrimPrefix(args[3], "./content/calendar/"), "/"))
 		titlePrefix = strings.Replace(titlePrefix, "Aol", "Arrow of Light", 1)
