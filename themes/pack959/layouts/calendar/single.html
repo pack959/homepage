@@ -10,18 +10,18 @@
                     <time datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Params.DateString }}</time>
                 </p>
             </li>
-            {{ if .Params.Location }}
+            {{ with .Params.Location }}
             <li>
                 <span class="icon-wrapper"><span class="icon solid fa-map-marker"></span></span>
                 <h3>Location</h3>
                 <p>
-                    <a href="https://maps.google.com/maps?q={{ .Params.Location }}">{{ .Params.Location }}</a>
+                    <a href="https://maps.google.com/maps?q={{ . | safeHTML }}">{{ . | safeHTML }}</a>
                 </p>
             </li>
             {{ end }}
         </ul>
         <div class="content">
-            {{ .Content  | safeHTML }}
+            {{ .Content | safeHTML }}
         </div>
     </div>
 </section>
