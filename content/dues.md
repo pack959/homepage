@@ -17,4 +17,4 @@ Pay the dues using the [Signup Genius link](https://www.signupgenius.com/go/10c0
 
 ## Pay by Check
 
-Contact [Rob McMahan](mailto:treasurer@pack959.com) to coordinate a time to deliver a check.
+Contact [Rob McMahan](mailto:treasurer@pack959.com) to coordinate a time to deliver a check.  Make checks payable to "Cub Scout Pack 959".
