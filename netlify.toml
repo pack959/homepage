@@ -38,3 +38,7 @@ environment = { HUGOARGS = "--buildFuture --baseURL $(DEPLOY_PRIME_URL)" }
 [[redirects]]
   from = "/why-scouting"
   to = "/"
+
+[[redirects]]
+  from = "/talent"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLSfmF1ONKOQh7Dfe587QInviTI8LRW040aKGxci9FrWmFZTBCA/viewform?usp=sf_link"
