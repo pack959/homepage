@@ -8,7 +8,7 @@ sections:
   - type: spotlight
     component: spotlight.html
     title: Cub Scout Pack 959
-    title_img_path: images/pack.jpg
+    title_img_path: images/pack2019.jpg
     content: >- 
       Pack 959 is located in Hockessin, Delaware and offers a year-round adventure-based program designed to build character, 
       develop citizenship, and encourage mental and physical fitness for boys and girls in grades K-5.
