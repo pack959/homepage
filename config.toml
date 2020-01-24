@@ -7,6 +7,11 @@ enableRobotsTXT = true
 
 theme = ["pack959"]
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 ## Menus
 [[ menu.main ]]
 title = "Home"
