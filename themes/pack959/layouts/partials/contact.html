@@ -3,7 +3,10 @@
     <div class="inner">
         <section>
             <h2>Send Us A Message</h2>
-            <form name="contact" method="post" netlify>
+            <form name="contact" method="post" netlify-honeypot="bot-field" netlify>
+                <span style="position:absolute;display:none;">
+                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                </span>
                 <div class="row gtr-uniform">
                     <div class="col-6 col-12-large col-6-medium col-12-xsmall">
                         <label for="name">Name</label>
