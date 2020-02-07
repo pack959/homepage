@@ -66,7 +66,7 @@ sections:
         img_path: images/bow.jpg
         text: >-
           Shooting sports have the ability to attract and retain youth in the movement. Millions of young people participate 
-          in one or more of the sports annually—archery, rifle shooting, shotgun activities, etc.—guided by adult volunteers 
+          in one or more of the sports annually—archery, bbs, etc.—guided by adult volunteers 
           who have the skills and knowledge to provide quality programs in a safe and effective way.
       - title: Pack Meetings
         img_path: images/pack_meeting.jpg
