@@ -38,6 +38,12 @@ identifier = "volunteer"
 weight = 40
 
 [[ menu.main ]]
+title = "Popcorn!"
+url = "/popcorn/"
+identifier = "popcorn "
+weight = 50
+
+[[ menu.main ]]
 title = "Join"
 url = "/join/"
 identifier = "join"
