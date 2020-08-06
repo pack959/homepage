@@ -14,7 +14,7 @@ Each Scout should commit to a personal goal for this year’s Popcorn Fundraiser
 
 Each Scout should commit to completing at least three of these strategies to promote their online sales page:
 
-* Create a Scouty business card [template coming soon] with a link to your online sales account. Print and hand out 20 business cards to friends and family, and ask everyone to visit your page and support you by purchasing popcorn.
+* Create a Scouty business card ([template](https://bit.ly/31uJrSN)) with a link to your online sales account. Print and hand out 20 business cards to friends and family, and ask everyone to visit your page and support you by purchasing popcorn.
 * Create a Scouty flyer [template coming soon] with a link to your online sales page. Print and hand out 20 flyers to friends and family, and ask everyone to visit your page and support you by purchasing popcorn.
 * Distribute your flyer to everyone in your neighborhood.
 * Distribute your flyer to everyone at your parents’ work.
