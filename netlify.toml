@@ -47,4 +47,9 @@ environment = { HUGOARGS = "--buildFuture --baseURL $(DEPLOY_PRIME_URL)" }
   from = "/popcorn/flyer"
   to = "https://drive.google.com/file/d/1MPufCcERZWbqWInEb9Nn6zItVXCF1D-O/view?usp=sharing"
   status = 302
+
+[[redirects]]
+  from = "/survey"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLSevjmv2CsCHwCFuagAMSFrIQfe48p8QQhRneCOePrHISKvQnA/viewform?usp=sf_link"
+  status = 302
   
