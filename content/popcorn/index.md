@@ -6,7 +6,7 @@ Welcome to our Popcorn Fundraiser page! The annual Popcorn Fundraiser helps Pack
 
 We are asking each Scout in Pack 959 to participate in the fundraiser. Our goal is 100% participation. 
 
-Our Popcorn Fundraiser this year will include show-and-sell opportunities at local stores, and we are planning a heavy emphasis on online sales. Safety during these Covid-19 times is our paramount concern.
+Our Popcorn Fundraiser this year will include (a) show-and-sell opportunities at local stores, (b) traditional take-order popcorn sales ([download a form](/popcorn/form)) and (c) a heavy emphasis on online sales. Safety during these Covid-19 times is our paramount concern ([download our show-and-sell safety protocol](/popcorn/safety)).
 
 Each Scout should visit [Trails-End.com](https://www.trails-end.com/) to set up their personal popcorn sales page. We encourage each Scout to personalize their page with photos, video, and information about themselves. Once the page is set up (or updated if you already have a Trails End account), download the Trails End app to your phone or tablet by texting APP to 62771. 
 
