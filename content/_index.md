@@ -4,6 +4,7 @@ sections:
     slides:
       - img_path: images/banner.jpg
       - img_path: images/pwd_wide.jpg
+      - img_path: images/campfire.jpg
     component: banner.html
   - type: spotlight
     component: spotlight.html
