@@ -4,10 +4,10 @@ title: Pack 959 Dues
 
 Our Pack dues are $150 per year, paid in September. The cost breakdown for dues is as follows:
 
-* $84 BSA yearly membership fee
+* $85 National and Council yearly membership fee
 * $25 Den stipend for den activities and materials
-* $10 Pack activities and events
-* $30 Scout advancements and awards (neckerchiefs, slides, belt loops, patches, etc)
+* $25 Scout advancements and awards (neckerchiefs, slides, belt loops, patches, etc)
+* $15 Pack activities and events
 
 While dues are important in funding the Pack, please remember they are only part of the equation. The other big part is our annual popcorn fundraiser.  This the only fundraising we do during the year!
 
