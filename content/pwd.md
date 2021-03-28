@@ -9,3 +9,8 @@ title: Pinewood Derby!
 ### Live Race Links
 
 [Stream](https://multistream.co/p/BUZ0bGp-IpV/Pack_959_Pinewood_Derby)
+
+### Race Information
+
+* [Roster](/pwd/roster.pdf)
+* [Schedule](/pwd/schedule.pdf)
