@@ -1,6 +1,6 @@
 HUGO=hugo
 HUGOARGS?=--minify --gc
-CALSTART=8/1/2021
+CALSTART=6/13/2021
 CALEND=12/31/2022
 
 build: functions genevents
