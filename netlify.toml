@@ -62,4 +62,10 @@ environment = { HUGOARGS = "--buildFuture --baseURL $(DEPLOY_PRIME_URL)" }
   from = "/survey"
   to = "https://docs.google.com/forms/d/e/1FAIpQLSevjmv2CsCHwCFuagAMSFrIQfe48p8QQhRneCOePrHISKvQnA/viewform?usp=sf_link"
   status = 302
+
+[[redirects]]
+  from = "/photodrop"
+  to = "https://www.smugmug.com/upload/LQmkv9/Pack959"
+  status = 302
+
   
