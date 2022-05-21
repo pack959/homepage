@@ -14,7 +14,7 @@ sections:
       Pack 959 is located in Hockessin, Delaware and offers a year-round adventure-based program designed to build character, 
       develop citizenship, and encourage mental and physical fitness for boys and girls in grades K-5.
       <br/><br/>
-      Grace Lutheran Church has been our Chartered Organization for over 25 years.  As a well established Cub Scout pack, 
+      Grace Lutheran Church has been our Chartered Organization for over 30 years.  As a well established Cub Scout pack, 
       we have enjoyed a long history of strong leadership and family involvement that makes for a meaningful experience for kids.  
       For over the last 6 years, Pack 959 is proud to have achieved annually the BSA’s Journey to Excellence award.
   - type: features
@@ -72,8 +72,7 @@ sections:
       - title: Pack Meetings
         img_path: images/pack_meeting.jpg
         text: >-
-          Our Pack meets once a month on the 3rd Friday of the month at Grace Lutheran Church.  In addition, Dens meet once a
-          month.  
+          Our Pack meets once a month at Grace Lutheran Church.  In addition, Dens meet once a month.  
       - title: WOW Events
         img_path: images/tubing.jpg
         text: >-

@@ -4,8 +4,8 @@ functions = "functions"
 command = "make"
 
 [build.environment]
-HUGO_VERSION = "0.86.1"
-GO_VERSION = "1.13"
+HUGO_VERSION = "0.99.1"
+GO_VERSION = "1.18"
 TZ = "America/New_York"
 
 [context.production.environment]
