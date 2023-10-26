@@ -1,7 +1,7 @@
 HUGO=hugo
 HUGOARGS?=--minify --gc
-CALSTART=6/13/2022
-CALEND=12/31/2023
+CALSTART=6/13/2023
+CALEND=12/31/2024
 
 build: functions genevents
 	$(HUGO) $(HUGOARGS)
